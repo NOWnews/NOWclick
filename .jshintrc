@@ -93,6 +93,7 @@
     "expect"
   ],
   "globals": {
-    "config": true
+    "config": true,
+    "rootPath": true
   }
 }
