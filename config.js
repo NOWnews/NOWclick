@@ -21,7 +21,7 @@ module.exports = {
                 logging: false, //看 SQL 語法
                 timezone: '+08:00'
             },
-            isForcingMigrate: true
+            resetDB: true
         }
     },
     staging: {
@@ -46,7 +46,7 @@ module.exports = {
                 logging: false, //看 SQL 語法
                 timezone: '+08:00'
             },
-            isForcingMigrate: false
+            resetDB: false
         }
     },
     production: {
@@ -71,7 +71,7 @@ module.exports = {
                 logging: false, //看 SQL 語法
                 timezone: '+08:00'
             },
-            isForcingMigrate: false
+            resetDB: false
         }
     }
 };

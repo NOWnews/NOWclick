@@ -7,7 +7,7 @@ let {
     username,
     password,
     options,
-    isForcingMigrate
+    resetDB
 } = config.db;
 let sequelize = new Sequelize(database, username, password, options);
 let db = {};
@@ -29,7 +29,7 @@ Object.keys(db).forEach((modelName) => {
 
 (async () => {
     try {
-        if (isForcingMigrate) {
+        if (resetDB) {
             await sequelize.query(`DROP DATABASE IF EXISTS ${database};`);
             await sequelize.query(`CREATE DATABASE IF NOT EXISTS ${database} CHARACTER SET utf8 COLLATE utf8_unicode_ci;`);
             await sequelize.query(`USE ${database};`);
