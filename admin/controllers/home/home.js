@@ -1,4 +1,16 @@
+import Promise from 'bluebird';
 
-module.exports = (req, res, next) => {
-    return res.render('index.html');
+module.exports = async (req, res, next) => {
+
+    try{
+        let result = await new Promise((resolve, reject) => {
+            return resolve('toooo');
+        });
+
+        console.log(result);
+        return res.render('index.html');
+    }
+    catch(err) {
+        return next(err);
+    }
 };
