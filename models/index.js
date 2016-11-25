@@ -27,17 +27,17 @@ Object.keys(db).forEach((modelName) => {
     }
 });
 
-
-if (isForcingMigrate) {
-    (async() => {
-        try {
-            await sequelize.sync({
-                force: isForcingMigrate,
-            });
-        } catch (e) {
-            console.error(e);
+(async () => {
+    try {
+        if (isForcingMigrate) {
+            await sequelize.query(`DROP DATABASE IF EXISTS ${database};`);
+            await sequelize.query(`CREATE DATABASE IF NOT EXISTS ${database} CHARACTER SET utf8 COLLATE utf8_unicode_ci;`);
+            await sequelize.query(`USE ${database};`);
         }
-    })();
-}
+        await sequelize.sync();
+    } catch (e) {
+        console.error(e);
+    }
+})();
 
 module.exports = db;
