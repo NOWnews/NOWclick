@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Sequelize from 'sequelize';
+import { admins, getVersions } from './initData';
 
 let {
     database,
@@ -14,7 +15,7 @@ let db = {};
 
 fs.readdirSync(__dirname)
 .filter((file) => {
-    return (file.indexOf('.') !== 0) && (file !== 'index.js');
+    return (file.indexOf('.') !== 0) && (file !== 'index.js') && (file !== 'initData.js');
 })
 .forEach((file) => {
     var model = sequelize.import(path.join(__dirname, file));
@@ -35,9 +36,15 @@ Object.keys(db).forEach((modelName) => {
             await sequelize.query(`USE ${database};`);
         }
         await sequelize.sync();
+        if (!resetDB ) { return; }
+        let adminResults = await db.Admin.bulkCreate(admins);
+        let versionData = getVersions(adminResults[0].id);
+        await db.Version.bulkCreate(versionData);
+
     } catch (e) {
         console.error(e);
     }
 })();
+
 
 module.exports = db;

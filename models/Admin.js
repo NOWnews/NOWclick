@@ -8,6 +8,7 @@ module.exports = (sequelize, DataTypes) => {
     email: {
       type: DataTypes.STRING,
       allowNull: false,
+      unqiue: true,
     },
     passwordHash: {
       type: DataTypes.CHAR(50),
@@ -16,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
     password: {
       type: DataTypes.VIRTUAL,
       allowNull: false,
-      set: (val) => {
+      set: function (val) {
         let salt = '';
         let passwordHash = `${salt}{$val}`;
         this.setDataValue('password', val);
@@ -34,11 +35,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     createdBy: {
       type: DataTypes.CHAR(36, true),
-      allowNull: false,
     },
     updatedBy: {
       type: DataTypes.CHAR(36, true),
-      allowNull: false,
     }
   }, {
     classMethods: {
