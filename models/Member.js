@@ -1,3 +1,4 @@
+import { getHashedPassword } from '../libs/auth';
 module.exports = (sequelize, DataTypes) => {
   let Member = sequelize.define('Member', {
     id: {
@@ -14,15 +15,14 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: 'NONE',
     },
     memo: DataTypes.STRING,
-    passwordHash: DataTypes.CHAR(50),
+    hashedPassword: DataTypes.CHAR(50),
     password: {
       type: DataTypes.VIRTUAL,
       allowNull: false,
-      set: (val) => {
-        let salt = '';
-        let passwordHash = `${salt}{$val}`;
+      set: function (val) {
+        let hashedPassword = getHashedPassword(val);
         this.setDataValue('password', val);
-        this.setDataValue('passwordHash', passwordHash);
+        this.setDataValue('hashedPassword', hashedPassword);
       }
     },
     phone: DataTypes.CHAR(10, true),

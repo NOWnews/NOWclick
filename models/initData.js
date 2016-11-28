@@ -1,6 +1,6 @@
 import Promise from 'bluebird';
 
-export const admins = [
+module.exports.admins = [
     {
         email: 'superAdmin@nownews.com',
         password: 'superAdmin',
@@ -15,7 +15,7 @@ export const admins = [
     },
 ];
 
-export function getVersions(adminId) {
+module.exports.getVersions = (adminId) => {
     return [
         {
             deviceType: 'BOX',

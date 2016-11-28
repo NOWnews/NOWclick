@@ -1,3 +1,4 @@
+import { getHashedPassword } from '../libs/auth';
 module.exports = (sequelize, DataTypes) => {
   let Admin = sequelize.define('Admin', {
     id: {
@@ -10,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       unqiue: true,
     },
-    passwordHash: {
+    hashedPassword: {
       type: DataTypes.CHAR(50),
       allowNull: false,
     },
@@ -18,10 +19,9 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.VIRTUAL,
       allowNull: false,
       set: function (val) {
-        let salt = '';
-        let passwordHash = `${salt}{$val}`;
+        let hashedPassword = getHashedPassword(val);
         this.setDataValue('password', val);
-        this.setDataValue('passwordHash', passwordHash);
+        this.setDataValue('hashedPassword', hashedPassword);
       }
     },
     role: {
