@@ -11,17 +11,31 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             unique: true,
+            comment: '索引值',
         },
-        address: DataTypes.STRING,
-        email: DataTypes.STRING,
+        address: {
+            type: DataTypes.STRING,
+            comment: '地址',
+        },
+        email: {
+            type: DataTypes.STRING,
+            comment: '信箱',
+        },
         gender: {
             type: DataTypes.ENUM,
             allowNull: false,
             values: ['NONE', 'BOY', 'GIRL'],
             defaultValue: 'NONE',
+            comment: '性別',
         },
-        memo: DataTypes.STRING,
-        hashedPassword: DataTypes.CHAR(50),
+        hashedPassword: {
+            type: DataTypes.CHAR(50),
+            comment: '加密後密碼',
+        },
+        memo: {
+            type: DataTypes.STRING,
+            comment: '備註',
+        },
         password: {
             type: DataTypes.VIRTUAL,
             allowNull: false,
@@ -29,19 +43,29 @@ module.exports = (sequelize, DataTypes) => {
                 let hashedPassword = getHashedPassword(val);
                 this.setDataValue('password', val);
                 this.setDataValue('hashedPassword', hashedPassword);
-            }
+            },
+            comment: '原始密碼傳入後會轉換成加密（此欄位為虛擬不會真實存在）',
         },
-        phone: DataTypes.CHAR(10, true),
-        username: DataTypes.STRING,
+        phone: {
+            type: DataTypes.CHAR(10, true),
+            comment: '電話（中間不含任何符號，例如： - ）',
+        },
+        username: {
+            type: DataTypes.STRING,
+            comment: '姓名',
+        },
         createdBy: {
             type: DataTypes.CHAR(36, true),
             allowNull: false,
+            comment: '建立者',
         },
         updatedBy: {
             type: DataTypes.CHAR(36, true),
             allowNull: false,
+            comment: '最後更新者',
         }
     }, {
+        comment: '會員資料表',
         classMethods: {
             associate: (models) => {
                 Member.belongsTo(models.Admin, {
