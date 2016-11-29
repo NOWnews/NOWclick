@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
             comment: '機器型號（ex: nexus, samsung ... ）',
         },
         osVersion: {
-            type: DataTypes.FLOAT,
+            type: DataTypes.STRING,
             comment: '作業系統版本（ex: 3.3, 10.0 ... ）',
         },
         token: {

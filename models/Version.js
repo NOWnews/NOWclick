@@ -5,16 +5,24 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             primaryKey: true,
         },
+        apkUrl: {
+            type: DataTypes.TEXT,
+            comment: '安裝包網址',
+        },
         deviceType: {
             type: DataTypes.ENUM,
             allowNull: false,
             values: ['BOX', 'IOS', 'ANDROID'],
             comment: '設備類型',
         },
-        version: {
-            type: DataTypes.FLOAT,
+        publishedDate: {
+            type: DataTypes.DATE,
             allowNull: false,
-            defaultValue: 0,
+            comment: '發布日期',
+        },
+        version: {
+            type: DataTypes.STRING,
+            allowNull: false,
             comment: '版本號',
         },
         createdBy: {

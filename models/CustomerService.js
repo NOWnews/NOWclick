@@ -56,8 +56,10 @@ module.exports = (sequelize, DataTypes) => {
         comment: '客服工單',
         classMethods: {
             associate: (models) => {
+                CustomerService.belongsTo(models.Admin, { foreignKey: 'AdminId' });
                 CustomerService.belongsTo(models.Admin, { foreignKey: 'createdBy' });
                 CustomerService.belongsTo(models.Admin, { foreignKey: 'updatedBy' });
+                CustomerService.belongsTo(models.Member, { foreignKey: 'MemberId' });
                 return;
             }
         }
