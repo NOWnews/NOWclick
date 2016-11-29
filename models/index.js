@@ -3,6 +3,8 @@ import path from 'path';
 import Sequelize from 'sequelize';
 import { admins, getVersions } from './initData';
 
+const env = process.env.NODE_ENV;
+
 let { database, username, password, options, resetDB } = config.db;
 let sequelize = new Sequelize(database, username, password, options);
 let db = {};
@@ -24,7 +26,7 @@ Object.keys(db).forEach((modelName) => {
 
 (async() => {
     try {
-        if (resetDB) {
+        if (resetDB && env === 'dev') {
             await sequelize.query(`DROP DATABASE IF EXISTS ${database};`);
             await sequelize.query(`CREATE DATABASE IF NOT EXISTS ${database} CHARACTER SET utf8 COLLATE utf8_unicode_ci;`);
             await sequelize.query(`USE ${database};`);
