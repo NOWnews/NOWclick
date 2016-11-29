@@ -1,18 +1,9 @@
 import fs from 'fs';
 import path from 'path';
 import Sequelize from 'sequelize';
-import {
-    admins,
-    getVersions
-} from './initData';
+import { admins, getVersions } from './initData';
 
-let {
-    database,
-    username,
-    password,
-    options,
-    resetDB
-} = config.db;
+let { database, username, password, options, resetDB } = config.db;
 let sequelize = new Sequelize(database, username, password, options);
 let db = {};
 
