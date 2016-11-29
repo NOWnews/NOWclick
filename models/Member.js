@@ -24,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
         gender: {
             type: DataTypes.ENUM,
             allowNull: false,
-            values: ['NONE', 'BOY', 'GIRL'],
+            values: ['NONE', 'MALE', 'FEMALE'],
             defaultValue: 'NONE',
             comment: '性別',
         },
@@ -47,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
             comment: '原始密碼傳入後會轉換成加密（此欄位為虛擬不會真實存在）',
         },
         phone: {
-            type: DataTypes.CHAR(10, true),
+            type: DataTypes.CHAR(50, true),
             comment: '電話（中間不含任何符號，例如： - ）',
         },
         username: {

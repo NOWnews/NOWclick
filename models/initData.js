@@ -15,17 +15,20 @@ module.exports.admins = [{
 module.exports.getVersions = (adminId) => {
     return [{
         deviceType: 'BOX',
-        version: '0.1',
+        publishedDate: '2016-12-01',
+        version: '0.0.1',
         createdBy: adminId,
         updatedBy: adminId,
     }, {
         deviceType: 'IOS',
-        version: '0.1',
+        publishedDate: '2016-12-01',
+        version: '0.0.1',
         createdBy: adminId,
         updatedBy: adminId,
     }, {
         deviceType: 'ANDROID',
-        version: '0.1',
+        publishedDate: '2016-12-01',
+        version: '0.0.1',
         createdBy: adminId,
         updatedBy: adminId,
     }, ];
