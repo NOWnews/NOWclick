@@ -1,6 +1,5 @@
-import {
-    getHashedPassword
-} from '../libs/auth';
+import getHashedPassword from '../libs/getHashedPassword';
+
 module.exports = (sequelize, DataTypes) => {
     let Member = sequelize.define('Member', {
         id: {
