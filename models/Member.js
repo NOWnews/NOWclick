@@ -7,6 +7,11 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: DataTypes.UUIDV4,
             primaryKey: true,
         },
+        index: {
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
+            unique: true,
+        },
         address: DataTypes.STRING,
         email: DataTypes.STRING,
         gender: {

@@ -1,8 +1,8 @@
 module.exports = (sequelize, DataTypes) => {
     let Version = sequelize.define('Version', {
         id: {
-            type: DataTypes.CHAR(36, true),
-            defaultValue: DataTypes.UUIDV4,
+            type: DataTypes.INTEGER,
+            autoIncrement: true,
             primaryKey: true,
         },
         deviceType: {
