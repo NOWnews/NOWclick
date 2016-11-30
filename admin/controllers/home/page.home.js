@@ -8,7 +8,7 @@ module.exports = async (req, res, next) => {
         });
 
         console.log(result);
-        return res.render('index.html');
+        return res.render('home/home.html');
     }
     catch(err) {
         return next(err);
