@@ -2,9 +2,9 @@
 import express from 'express';
 let router = express.Router();
 
-import pageHome from './page.home';
+import pageLogin from './page.login';
 
-router.route('/')
-    .get(pageHome);
+router.route('/login')
+    .get(pageLogin);
 
 module.exports = router;
