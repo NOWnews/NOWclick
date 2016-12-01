@@ -1,4 +1,3 @@
-
 import PrettyError from 'pretty-error';
 let prettyError = new PrettyError();
 

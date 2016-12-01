@@ -1,4 +1,3 @@
-
 import home from './home';
 
 module.exports = (app) => {
