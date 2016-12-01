@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/nownews/NOWott.git"
+    "url": "git+ssh://git@github.com:NOWnews/NOWott.git"
   },
   "author": "Simon Sun",
   "license": "MIT",
   "bugs": {
-    "url": "https://gitlab.com/nownews/NOWott/issues"
+    "url": "https://github.com/NOWnews/NOWott/issues"
   },
-  "homepage": "https://gitlab.com/nownews/NOWott#README",
+  "homepage": "https://github.com/NOWnews/NOWott#README",
   "dependencies": {
     "babel-core": "^6.18.2",
     "babel-polyfill": "^6.16.0",
