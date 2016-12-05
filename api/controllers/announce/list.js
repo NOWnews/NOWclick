@@ -15,7 +15,7 @@ module.exports = async (req, res, next) => {
                 $gte: today
             },
         },
-        order: ['startTime', 'ASC'],
+        order: 'startTime ASC',
     });
     return res.json(announces);
 };
