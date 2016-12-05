@@ -9,12 +9,21 @@ module.exports = async (req, res, next) => {
         ],
         where: {
             actived: true,
-            startTime: {
-                $lte: today
-            },
-            endTime: {
-                $gte: today
-            },
+            $or: [
+                {
+                    startTime: {
+                        $gte: today
+                    },
+                },
+                {
+                    startTime: {
+                        $lte: today
+                    },
+                    endTime: {
+                        $gte: today
+                    },
+                }
+            ]
         },
         order: 'startTime ASC',
     });
