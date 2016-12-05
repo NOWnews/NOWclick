@@ -5,6 +5,7 @@ module.exports = async (req, res, next) => {
             'content',
             'endTime',
             'startTime',
+            'willShutdownServer',
         ],
         where: {
             actived: true,
