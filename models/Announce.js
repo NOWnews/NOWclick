@@ -45,7 +45,7 @@ module.exports = (sequelize, DataTypes) => {
         type: {
             type: DataTypes.ENUM,
             allowNull: false,
-            values: ['COMMON', 'COMPENSATE', 'SHUTDOWN_SERVER', 'ACTIVITY'],
+            values: ['COMMON', 'COMPENSATE', 'MAINTAIN', 'ACTIVITY'],
             defaultValue: 'COMMON',
             comment: '公告類型',
         },
