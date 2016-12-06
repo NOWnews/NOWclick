@@ -12,7 +12,7 @@ module.exports = (app) => {
         let mode = process.env.NODE_ENV;
         let apiKey = req.header('X-NOWnews-API');
 
-        if(mode !== 'dev' && (!apiKey || !global.config.header['X-NOWnews-API'].includes(apiKey))) {
+        if(mode !== 'dev' && (!apiKey || !config.header['X-NOWnews-API'].includes(apiKey))) {
             return next(new Error('BAD REQUEST'));
         }
 
