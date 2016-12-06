@@ -73,5 +73,12 @@ module.exports = {
             },
             resetDB: false
         }
-    }
+    },
+
+    /*
+     * HTTP HEADER 欄位 key
+     */
+    header: {
+        'X-NOWnews-API': 'NOWnewsTaiwanNumberOne'
+    },
 };
