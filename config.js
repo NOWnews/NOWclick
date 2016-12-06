@@ -1,3 +1,11 @@
+
+/*
+ * HTTP HEADER 欄位 key
+ */
+let header = {
+    'X-NOWnews-API': ['NOWnewsTaiwanNumberOne']
+}
+
 module.exports = {
     dev: {
         db: {
@@ -22,7 +30,11 @@ module.exports = {
                 timezone: '+08:00'
             },
             resetDB: true
-        }
+        },
+        /*
+         * HTTP HEADER 欄位 key
+         */
+        header,
     },
     staging: {
         db: {
@@ -47,7 +59,11 @@ module.exports = {
                 timezone: '+08:00'
             },
             resetDB: false
-        }
+        },
+        /*
+         * HTTP HEADER 欄位 key
+         */
+        header,
     },
     production: {
         db: {
@@ -72,6 +88,10 @@ module.exports = {
                 timezone: '+08:00'
             },
             resetDB: false
-        }
-    }
+        },
+        /*
+         * HTTP HEADER 欄位 key
+         */
+        header,
+    },
 };
