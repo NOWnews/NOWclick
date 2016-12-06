@@ -20,3 +20,23 @@ baseUrl = http:localhost:3000/api/[version]
     type: 'COMMON',
 }]
 ```
+
+### Version (設備版本)
+
+#### `GET` /version?deviceType
+
+將對應 deviceType 的最新版本回傳
+
+##### Query String
+
+- deviceType: IOS/ANDROID/BOX
+
+##### Response Data
+
+```
+[{
+    apiUrl: '',
+    publishedDate: 'xxxx-xx-xx',
+    version: '',
+}]
+```
