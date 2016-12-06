@@ -1,3 +1,5 @@
+import moment from 'moment-timezone';
+
 module.exports = (sequelize, DataTypes) => {
     let Announce = sequelize.define('Announce', {
         id: {
@@ -26,11 +28,26 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE,
             allowNull: false,
             comment: '公告結束時間',
+            get: function (column) {
+                let val = this.getDataValue(column);
+                return moment(val).format('YYYY-MM-DD HH:mm:ss');
+            },
         },
         startTime: {
             type: DataTypes.DATE,
             allowNull: false,
             comment: '公告發布時間',
+            get: function (column) {
+                let val = this.getDataValue(column);
+                return moment(val).format('YYYY-MM-DD HH:mm:ss');
+            },
+        },
+        type: {
+            type: DataTypes.ENUM,
+            allowNull: false,
+            values: ['COMMON', 'COMPENSATE', 'MAINTAIN', 'ACTIVITY'],
+            defaultValue: 'COMMON',
+            comment: '公告類型',
         },
         createdBy: {
             type: DataTypes.CHAR(36, true),
