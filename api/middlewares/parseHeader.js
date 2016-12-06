@@ -1,9 +1,8 @@
 
-import config from '../../config';
-
 module.exports = (app) => {
 
     return (req, res, next) => {
+        let config = global.config;
 
         // 如果 router 有在白名單內，就直接 next
         // if(config.headerWhiteList.includes(req.path)) {
@@ -13,7 +12,7 @@ module.exports = (app) => {
         let mode = process.env.NODE_ENV;
         let apiKey = req.header('X-NOWnews-API');
 
-        if(mode === 'dev' && (!apiKey || !config.header['X-NOWnews-API'].includes(apiKey))) {
+        if(mode !== 'dev' && (!apiKey || !global.config.header['X-NOWnews-API'].includes(apiKey))) {
             return next(new Error('BAD REQUEST'));
         }
 
