@@ -1,9 +1,9 @@
 import express from 'express';
 let router = express.Router();
 
-import check from './check';
+import one from './one';
 
 router.route('/version')
-    .get(check);
+    .get(one);
 
 module.exports = router;
