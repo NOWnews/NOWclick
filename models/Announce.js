@@ -42,11 +42,12 @@ module.exports = (sequelize, DataTypes) => {
                 return moment(val).format('YYYY-MM-DD HH:mm:ss');
             },
         },
-        willShutdownServer: {
-            type: DataTypes.BOOLEAN,
+        type: {
+            type: DataTypes.ENUM,
             allowNull: false,
-            defaultValue: false,
-            comment: '是否會關閉伺服器導致不能使用',
+            values: ['COMMON', 'COMPENSATE', 'SHUTDOWN_SERVER', 'ACTIVITY'],
+            defaultValue: 'COMMON',
+            comment: '公告類型',
         },
         createdBy: {
             type: DataTypes.CHAR(36, true),
