@@ -17,6 +17,6 @@ baseUrl = http:localhost:3000/api/[version]
     endTime: 'xxxx-xx-xx 00:00:00',
     startTime: 'xxxx-xx-xx 00:00:00',
     content: '',
-    willShutdownServer: true,
+    type: 'COMMON',
 }]
 ```
