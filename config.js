@@ -34,7 +34,7 @@ module.exports = {
         /*
          * HTTP HEADER 欄位 key
          */
-        header: header,
+        header,
     },
     staging: {
         db: {
@@ -63,7 +63,7 @@ module.exports = {
         /*
          * HTTP HEADER 欄位 key
          */
-        header: header,
+        header,
     },
     production: {
         db: {
@@ -92,6 +92,6 @@ module.exports = {
         /*
          * HTTP HEADER 欄位 key
          */
-        header: header,
+        header,
     },
 };
