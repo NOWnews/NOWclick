@@ -24,7 +24,27 @@
     endTime: 'xxxx-xx-xx 00:00:00',
     startTime: 'xxxx-xx-xx 00:00:00',
     content: '',
-    willShutdownServer: true,
+    type: 'COMMON',
+}]
+```
+
+### Version (設備版本)
+
+#### `GET` /version?deviceType
+
+將對應 deviceType 的最新版本回傳
+
+##### Query String
+
+- deviceType: IOS/ANDROID/BOX
+
+##### Response Data
+
+```
+[{
+    apiUrl: '',
+    publishedDate: 'xxxx-xx-xx',
+    version: '',
 }]
 ```
 ### Channel（頻道）

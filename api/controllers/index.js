@@ -2,6 +2,7 @@ import home from './home';
 import announce from './announce';
 import channel from './channel';
 import movie from './movie';
+import version from './version';
 
 module.exports = (app) => {
     let defaultVersionPath = ['/api/v1', '/api'];
@@ -10,6 +11,7 @@ module.exports = (app) => {
     app.use(defaultVersionPath, announce);
     app.use(defaultVersionPath, channel);
     app.use(defaultVersionPath, movie);
+    app.use(defaultVersionPath, version);
 
     return (req, res, next) => {
         return next();
