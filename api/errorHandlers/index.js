@@ -5,7 +5,7 @@ module.exports = (app) => {
 
     app.use((err, req, res, next) => {
         console.log(prettyError.render(err));
-        res.status(400);
+        return res.status(400).send();
         // return res.json({
         //     type: 'error',
         //     message: err.message
