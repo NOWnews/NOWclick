@@ -1,5 +1,7 @@
 import home from './home';
 import announce from './announce';
+import channel from './channel';
+import movie from './movie';
 import version from './version';
 
 module.exports = (app) => {
@@ -7,6 +9,8 @@ module.exports = (app) => {
 
     app.use(defaultVersionPath, home);
     app.use(defaultVersionPath, announce);
+    app.use(defaultVersionPath, channel);
+    app.use(defaultVersionPath, movie);
     app.use(defaultVersionPath, version);
 
     return (req, res, next) => {

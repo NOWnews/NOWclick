@@ -6,6 +6,8 @@ import cookieParser from 'cookie-parser';
 import bodyParser from 'body-parser';
 import cookieSession from 'cookie-session';
 
+import parseHeader from './parseHeader';
+
 module.exports = (app) => {
 
     app.use(compression());
@@ -18,6 +20,9 @@ module.exports = (app) => {
     }));
     app.use(cookieParser());
     app.use(cors());
+
+    // 處理 header 相關驗證
+    app.use(parseHeader());
 
     // app.use(upload.fields([
     //     { name: 'file', maxCount: 1 },
