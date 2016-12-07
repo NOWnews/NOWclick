@@ -27,3 +27,30 @@
     willShutdownServer: true,
 }]
 ```
+### Channel（頻道）
+
+#### `GET` /channels
+
+取得頻道列表
+
+##### Response Data
+
+```
+[{
+    未知...
+}]
+```
+
+### Movie（電影）
+
+#### `GET` /movies
+
+取得電影列表
+
+##### Response Data
+
+```
+[{
+    未知...
+}]
+```
