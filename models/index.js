@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import Sequelize from 'sequelize';
-import { admins, getVersions } from './initData';
+import initData from './initData';
 
 const env = process.env.NODE_ENV;
 
@@ -35,9 +35,10 @@ Object.keys(db).forEach((modelName) => {
         if (!resetDB) {
             return;
         }
-        let adminResults = await db.Admin.bulkCreate(admins);
-        let versionData = getVersions(adminResults[0].id);
-        await db.Version.bulkCreate(versionData);
+
+        let { admins, versions } = initData;
+        await db.Admin.bulkCreate(admins);
+        await db.Version.bulkCreate(versions);
 
     } catch (e) {
         console.error(e);

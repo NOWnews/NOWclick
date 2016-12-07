@@ -1,3 +1,4 @@
+import moment from 'moment-timezone';
 module.exports = (sequelize, DataTypes) => {
     let Version = sequelize.define('Version', {
         id: {
@@ -16,9 +17,13 @@ module.exports = (sequelize, DataTypes) => {
             comment: '設備類型',
         },
         publishedDate: {
-            type: DataTypes.DATE,
+            type: DataTypes.DATEONLY,
             allowNull: false,
             comment: '發布日期',
+            get: function (column) {
+                let val = this.getDataValue(column);
+                return moment(val).format('YYYY-MM-DD');
+            },
         },
         version: {
             type: DataTypes.STRING,
