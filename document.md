@@ -9,6 +9,14 @@
 |---|---|---|---|---|
 | X-NOWnews-API | 驗證是否有存取 api 權限的 token，目前為固定的值 | [`NOWnewsTaiwanNumberOne`] | √ | `request.header['X-NOWnews-API'] = 'NOWnewsTaiwanNumberOne'` |
 
+### State Code
+
+```
+suceess: 200
+faild: 400
+```
+- - -
+
 ## Version: v1
 
 ### Announce（系統公告）
@@ -74,3 +82,61 @@
     未知...
 }]
 ```
+
+### Device（設備）
+
+#### `GET` /device/:deviceId
+
+取得對應且有啟用的設備
+
+##### Response Data
+
+```
+[{
+    id,
+    identifier,
+    type,
+}]
+
+```
+
+#### `POST` /device
+
+取得對應且有啟用的設備
+
+##### Req.body
+
+```
+{
+    identifier,
+    model,
+    osVersion,
+    token,
+    type: BOX/IOS/ANDROID,
+}
+```
+##### Response Data
+
+```
+{
+    // 完整的 Device Modal
+    // id, 建立時間 ...
+}
+```
+
+#### `PUT` /device/:deviceId
+
+更新設備
+
+##### Req.body
+
+```
+{
+    // 目前傳什麼就改什麼
+}
+```
+
+##### Response Data
+
+回傳 StateCode，失敗才有訊息
+
