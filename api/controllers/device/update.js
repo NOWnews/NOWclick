@@ -1,12 +1,18 @@
 module.exports = async (req, res, next) => {
     try {
         let { deviceId } = req.params;
-        let device = await db.Device.update(req.body, {
+        let result = await db.Device.update(req.body, {
             where: {
                 id: deviceId,
             }
         });
-        return res.json(device);
+
+        if (result[0]) {
+            return res.status(200).send();
+        } else {
+            return next('Update faild !');
+        }
+
     } catch (e) {
         return next(e);
     }
