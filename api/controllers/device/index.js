@@ -5,7 +5,7 @@ import create from './create';
 import one from './one';
 import update from './update';
 
-router.route('/device/')
+router.route('/device')
     .post(create);
 
 router.route('/device/:deviceId')
