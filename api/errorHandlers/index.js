@@ -5,11 +5,11 @@ module.exports = (app) => {
 
     app.use((err, req, res, next) => {
         console.log(prettyError.render(err));
-        return res.status(400).send();
-        // return res.json({
-        //     type: 'error',
-        //     message: err.message
-        // });
+        let message = (typeof err === 'string') ? err : err.message;
+        return res.status(400).json({
+            type: 'error',
+            message,
+        });
     });
 
     return (req, res, next) => {

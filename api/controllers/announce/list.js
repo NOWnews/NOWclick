@@ -30,11 +30,9 @@ module.exports = async (req, res, next) => {
             },
             order: 'startTime ASC',
         });
-
         return res.json({ result });
 
     } catch (e) {
-
         return next(e);
 
     }

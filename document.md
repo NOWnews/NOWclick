@@ -15,6 +15,15 @@
 suceess: 200
 faild: 400
 ```
+
+### Error Response
+
+```
+{
+    type: "error",
+    message: "xxxx"
+}
+
 - - -
 
 ## Version: v1
