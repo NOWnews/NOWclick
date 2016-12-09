@@ -6,14 +6,14 @@ import movie from './movie';
 import version from './version';
 
 module.exports = (app) => {
-    let defaultVersionPath = ['/api/v1', '/api'];
+    let defaultVersion = '/api/v1';
 
-    app.use(defaultVersionPath, home);
-    app.use(defaultVersionPath, announce);
-    app.use(defaultVersionPath, channel);
-    app.use(defaultVersionPath, device);
-    app.use(defaultVersionPath, movie);
-    app.use(defaultVersionPath, version);
+    app.use(defaultVersion, home);
+    app.use(defaultVersion, announce);
+    app.use(defaultVersion, channel);
+    app.use(defaultVersion, device);
+    app.use(defaultVersion, movie);
+    app.use(defaultVersion, version);
 
     return (req, res, next) => {
         return next();
