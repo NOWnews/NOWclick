@@ -85,24 +85,9 @@ faild: 400
 
 ### Device（設備）
 
-#### `GET` /device/:deviceId
-
-取得對應且有啟用的設備
-
-##### Response Data
-
-```
-[{
-    id,
-    identifier,
-    type,
-}]
-
-```
-
 #### `POST` /device
 
-取得對應且有啟用的設備
+建立 Device
 
 ##### Req.body
 
