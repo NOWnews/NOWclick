@@ -4,7 +4,7 @@ module.exports = async (req, res, next) => {
         let today = new Date();
         let { deviceType } = req.query;
 
-        let version = await db.Version.findOne({
+        let result = await db.Version.findOne({
             attributes: [
                 'apkUrl',
                 'publishedDate',
@@ -18,8 +18,7 @@ module.exports = async (req, res, next) => {
             },
             order: 'publishedDate DESC'
         });
-
-        return res.json(version);
+        return res.json({ result });
 
     } catch (e) {
 

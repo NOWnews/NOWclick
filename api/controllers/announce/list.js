@@ -3,7 +3,7 @@ module.exports = async (req, res, next) => {
 
         let today = new Date();
 
-        let announces = await db.Announce.findAll({
+        let result = await db.Announce.findAll({
             attributes: [
                 'content',
                 'endTime',
@@ -31,7 +31,7 @@ module.exports = async (req, res, next) => {
             order: 'startTime ASC',
         });
 
-        return res.json(announces);
+        return res.json({ result });
 
     } catch (e) {
 

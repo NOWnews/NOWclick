@@ -49,11 +49,13 @@ faild: 400
 ##### Response Data
 
 ```
-[{
-    apkUrl: '',
-    publishedDate: 'xxxx-xx-xx',
-    version: '',
-}]
+{
+    result: [{
+        apkUrl: '',
+        publishedDate: 'xxxx-xx-xx',
+        version: '',
+    }]
+}
 ```
 ### Channel（頻道）
 
@@ -64,9 +66,11 @@ faild: 400
 ##### Response Data
 
 ```
-[{
-    未知...
-}]
+{
+    result: [{
+        未知...
+    }]
+}
 ```
 
 ### Movie（電影）
@@ -78,9 +82,11 @@ faild: 400
 ##### Response Data
 
 ```
-[{
-    未知...
-}]
+{
+    result: [{
+        未知...
+    }]
+}
 ```
 
 ### Device（設備）
@@ -93,19 +99,23 @@ faild: 400
 
 ```
 {
-    identifier,
-    model,
-    osVersion,
-    token,
-    type: BOX/IOS/ANDROID,
+    result: {
+        identifier,
+        model,
+        osVersion,
+        token,
+        type: BOX/IOS/ANDROID,
+    }
 }
 ```
 ##### Response Data
 
 ```
 {
-    // 完整的 Device Modal
-    // id, 建立時間 ...
+    result: {
+        // 完整的 Device Modal
+        // id, 建立時間 ...
+    }
 }
 ```
 
@@ -117,7 +127,9 @@ faild: 400
 
 ```
 {
-    // 目前傳什麼就改什麼
+    result: {
+        // 目前傳什麼就改什麼
+    }
 }
 ```
 
