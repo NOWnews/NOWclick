@@ -50,7 +50,7 @@ faild: 400
 
 ```
 [{
-    apiUrl: '',
+    apkUrl: '',
     publishedDate: 'xxxx-xx-xx',
     version: '',
 }]
