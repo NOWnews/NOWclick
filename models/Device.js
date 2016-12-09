@@ -24,7 +24,6 @@ module.exports = (sequelize, DataTypes) => {
         },
         model: {
             type: DataTypes.STRING,
-            allowNull: false,
             comment: '機器型號（ex: nexus, samsung ... ）',
         },
         osVersion: {
