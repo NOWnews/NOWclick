@@ -4,8 +4,8 @@ module.exports = async (req, res, next) => {
         params.actived = true;
         params.createdBy = config.superAdminId;
         params.updatedBy = config.superAdminId;
-        let device = await db.Device.create(params);
-        return res.json(device);
+        let result = await db.Device.create(params);
+        return res.json({ result });
     } catch (e) {
         return next(e);
     }
