@@ -4,7 +4,11 @@ module.exports = async (req, res, next) => {
         params.actived = true;
         params.createdBy = config.superAdminId;
         params.updatedBy = config.superAdminId;
-        let result = await db.Device.create(params);
+        let optionObj = {
+            where: {identifier: params.identifier},
+            defaults: params
+        }
+        let result = await db.Device.findOrCreate(optionObj);
         return res.json({ result });
     } catch (e) {
         return next(e);
