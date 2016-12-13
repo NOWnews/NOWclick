@@ -1,7 +1,7 @@
 module.exports = async (req, res, next) => {
     try {
         let params = req.body;
-        let result = await db.Device.find(params);
+        let result = await db.Device.find({identifier: params.identifier});
 
         // 如果找不到這筆資料才建立
         if (!result) {

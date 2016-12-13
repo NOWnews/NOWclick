@@ -102,7 +102,7 @@ faild: 400
 
 #### `POST` /device
 
-建立 Device
+建立 Device，如果已經有這筆 Device ，會回傳已建立好的 Device 資料
 
 ##### Req.body
 
