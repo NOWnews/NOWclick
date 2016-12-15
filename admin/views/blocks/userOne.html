@@ -2,7 +2,7 @@
     <div class="">
         <div class="page-title">
             <div class="title_left">
-                <h3>新增客戶</h3>
+                <h3>客戶詳細資料</h3>
             </div>
         </div>
         <div class="clearfix"></div>
@@ -30,22 +30,22 @@
                     </div>
                     <div class="x_content">
                         <br />
-                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="" action="">
+                        <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                <input type="text" name="username" class="form-control has-feedback-left" id="inputSuccess2" placeholder="姓名">
+                                <input type="text" name="username" class="form-control has-feedback-left" id="inputSuccess2" placeholder="歐巴馬" readonly="readonly">
                                 <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                    <input type="text" name="phone" class="form-control" id="inputSuccess3" placeholder="電話">
+                                    <input type="text" name="phone" class="form-control" id="inputSuccess3" placeholder="0912345678" readonly="readonly">
                                     <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                    <input type="text" name="email" class="form-control has-feedback-left" id="inputSuccess4" placeholder="Email">
+                                    <input type="text" name="email" class="form-control has-feedback-left" id="inputSuccess4" placeholder="abcobama@gmail.com" readonly="readonly">
                                     <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                    <input type="text" name="address" class="form-control" id="inputSuccess5" placeholder="地址">
+                                    <input type="text" name="address" class="form-control" id="inputSuccess5" placeholder="台灣省台北市內湖區大中路無尾巷" readonly="readonly">
                                     <span class="fa fa-address-card-o form-control-feedback right" aria-hidden="true"></span>
                                 </div>
 
@@ -55,7 +55,7 @@
                                 <label class="control-label col-md-1 col-sm-1 col-xs-12">性別</label>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div id="gender" class="btn-group" data-toggle="buttons">
-                                        <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+                                        <label class="btn btn-default active" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
                                             <input type="radio" name="gender" value="male">男性
                                         </label>
                                         <label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
@@ -67,16 +67,16 @@
                             <div class="form-group">
                             <label class="control-label col-md-1 col-sm-1 col-xs-12">密碼</label>
                             <div class="col-md-4 col-sm-4 col-xs-12">
-                                <input type="password" class="form-control" value="">
+                                <input type="password" class="form-control" value="000000" readonly="readonly">
                             </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label col-md-1 col-sm-1 col-xs-12">備註</label>
                                 <div class="col-md-4 col-sm-4 col-xs-12">
-                                    <textarea class="resizable_textarea form-control" name="memo" placeholder="備註文字"></textarea>
+                                    <textarea class="resizable_textarea form-control" name="memo" placeholder="中年男子愛看謎片" readonly="readonly"></textarea>
                                 </div>
                             </div>
-                            <!-- <div class="form-group">
+                            <div class="form-group">
                                 <label class="control-label col-md-1 col-sm-1 col-xs-12">建立時間</label>
                                 <div class="col-md-4 col-sm-4 col-xs-12">
                                     <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
@@ -96,8 +96,8 @@
                                     <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
                                     <input type="text" name="deletedAt" class="form-control" readonly="readonly" placeholder="2016/12/12" style="padding-left:50px">
                                 </div>
-                            </div> -->
-                            <!-- <div class="form-group">
+                            </div>
+                            <div class="form-group">
                                 <label class="control-label col-md-1 col-sm-1 col-xs-12">建立者</label>
                                 <div class="col-md-4 col-sm-4 col-xs-12">
                                     <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
@@ -110,7 +110,7 @@
                                     <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                     <input type="text" name="updatedBy" class="form-control" readonly="readonly" placeholder="中文字" style="padding-left:50px">
                                 </div>
-                            </div> -->
+                            </div>
                             <div class="ln_solid"></div>
                             <div class="form-group">
                                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-5">
