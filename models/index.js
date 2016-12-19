@@ -36,8 +36,8 @@ Object.keys(db).forEach((modelName) => {
             return;
         }
 
-        let { admins, versions } = initData;
-        await db.Admin.bulkCreate(admins);
+        let { managers, versions } = initData;
+        await db.Manager.bulkCreate(managers);
         await db.Version.bulkCreate(versions);
 
     } catch (e) {

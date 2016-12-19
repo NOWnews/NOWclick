@@ -66,95 +66,20 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <td>1</td>
-                                      <td>UUID1</td>
-                                      <td>BOX</td>
-                                      <td>MAC Address</td>
-                                      <td>NEXUS</td>
-                                      <td>是</td>
-                                      <td>2011/04/25</td>
-                                      <td>2011/04/25</td>
-                                      <td>Token</td>
-                                  </tr>
-                                  <tr>
-                                      <td>2</td>
-                                      <td>UUID2</td>
-                                      <td>BOX</td>
-                                      <td>MAC Address</td>
-                                      <td>NEXUS</td>
-                                      <td>是</td>
-                                      <td>2011/07/25</td>
-                                      <td>2011/07/25</td>
-                                      <td>Token</td>
-                                  </tr>
-                                  <tr>
-                                      <td>3</td>
-                                      <td>UUID3</td>
-                                      <td>IOS</td>
-                                      <td>MAC Address</td>
-                                      <td>NEXUS</td>
-                                      <td>是</td>
-                                      <td>2009/01/12</td>
-                                      <td>2009/01/12</td>
-                                      <td>Token</td>
-                                  </tr>
-                                  <tr>
-                                      <td>4</td>
-                                      <td>UUID4</td>
-                                      <td>ANDROID</td>
-                                      <td>MAC Address</td>
-                                      <td>SAMSUNG</td>
-                                      <td>否</td>
-                                      <td>2012/03/29</td>
-                                      <td>2012/03/29</td>
-                                      <td>Token</td>
-                                  </tr>
-                                  <tr>
-                                      <td>5</td>
-                                      <td>UUID5</td>
-                                      <td>IOS</td>
-                                      <td>MAC Address</td>
-                                      <td>SAMSUNG</td>
-                                      <td>否</td>
-                                      <td>2008/11/28</td>
-                                      <td>2008/11/28</td>
-                                      <td>Token</td>
-                                  </tr>
-                                  <tr>
-                                      <td>6</td>
-                                      <td>UUID6</td>
-                                      <td>ANDROID</td>
-                                      <td>MAC Address</td>
-                                      <td>SAMSUNG</td>
-                                      <td>否</td>
-                                      <td>2012/12/02</td>
-                                      <td>2012/12/02</td>
-                                      <td>Token</td>
-                                  </tr>
-                                  <tr>
-                                      <td>7</td>
-                                      <td>UUID7</td>
-                                      <td>ANDROID</td>
-                                      <td>MAC Address</td>
-                                      <td>SAMSUNG</td>
-                                      <td>否</td>
-                                      <td>2012/08/06</td>
-                                      <td>2012/08/06</td>
-                                      <td>Token</td>
-                                  </tr>
-                                  <tr>
-                                      <td>8</td>
-                                      <td>UUID8</td>
-                                      <td>ANDROID</td>
-                                      <td>MAC Address</td>
-                                      <td>SAMSUNG</td>
-                                      <td>否</td>
-                                      <td>2010/10/14</td>
-                                      <td>2010/10/14</td>
-                                      <td>Token</td>
-                                  </tr>
-                                  <tr>
+                                    {% for device in devices %}
+                                        <tr>
+                                            <td>{{ device.index }}</td>
+                                            <td>{{ device.User.id }}</td>
+                                            <td>{{ device.type }}</td>
+                                            <td>{{ device.identifier }}</td>
+                                            <td>{{ device.model }}</td>
+                                            <td>{{ device.actived }}</td>
+                                            <td>{{ device.createdAt }}</td>
+                                            <td>{{ device.updatedAt }}</td>
+                                            <td>{{ device.token }}</td>
+                                        </tr>
+                                    {% endfor %}
+<!--                                   <tr>
                                       <td>9</td>
                                       <td>UUID9</td>
                                       <td>IOS</td>
@@ -164,7 +89,7 @@
                                       <td>2009/09/15</td>
                                       <td>2009/09/15</td>
                                       <td>Token</td>
-                                  </tr>
+                                  </tr> -->
                               </tbody>
                           </table>
                       </div>

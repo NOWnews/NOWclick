@@ -1,35 +1,35 @@
 import Promise from 'bluebird';
-let superAdminId = 1, adminId = 2;
-module.exports.admins = [{
-    id: superAdminId,
-    email: 'superAdmin@nownews.com',
-    password: 'superAdmin',
+let superManagerId = 1, managerId = 2;
+module.exports.managers = [{
+    id: superManagerId,
+    email: 'superManager@nownews.com',
+    password: 'superManager',
     role: 'SYSTEM',
-    username: 'SuperAdmin',
+    username: 'SuperManager',
 }, {
-    id: adminId,
-    email: 'admin@nownews.com',
-    password: 'admin',
-    role: 'ADMIN',
-    username: 'Admin',
+    id: managerId,
+    email: 'manager@nownews.com',
+    password: 'manager',
+    role: 'MANAGER',
+    username: 'manager',
 }, ];
 
 module.exports.versions = [{
     deviceType: 'BOX',
     publishedDate: '2016-12-01',
     version: '0.0.1',
-    createdBy: superAdminId,
-    updatedBy: superAdminId,
+    createdBy: superManagerId,
+    updatedBy: superManagerId,
 }, {
     deviceType: 'IOS',
     publishedDate: '2016-12-01',
     version: '0.0.1',
-    createdBy: superAdminId,
-    updatedBy: superAdminId,
+    createdBy: superManagerId,
+    updatedBy: superManagerId,
 }, {
     deviceType: 'ANDROID',
     publishedDate: '2016-12-01',
     version: '0.0.1',
-    createdBy: superAdminId,
-    updatedBy: superAdminId,
+    createdBy: superManagerId,
+    updatedBy: superManagerId,
 }];

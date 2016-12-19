@@ -55,8 +55,8 @@ module.exports = (sequelize, DataTypes) => {
         comment: '機器設備',
         classMethods: {
             associate: (models) => {
-                Device.belongsTo(models.Admin, { foreignKey: 'createdBy' });
-                Device.belongsTo(models.Admin, { foreignKey: 'updatedBy' });
+                Device.belongsTo(models.Manager, { foreignKey: 'createdBy' });
+                Device.belongsTo(models.Manager, { foreignKey: 'updatedBy' });
                 Device.belongsTo(models.User);
                 return;
             }

@@ -12,7 +12,7 @@ module.exports = async (req, res, next) => {
             raw: true
         });
 
-        // 正規化資料
+        // 正規化資料格式
         let formatUsers = _.map(users, (user) => {
             user.createdAt = moment(user.createdAt).tz('Asia/Taipei').format('YYYY/MM/DD HH:mm');
             user.updatedAt = moment(user.updatedAt).tz('Asia/Taipei').format('YYYY/MM/DD HH:mm');
