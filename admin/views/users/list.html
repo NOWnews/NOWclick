@@ -6,25 +6,8 @@
       <div class="main_container">
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="/" class="site_title"><i class="fa fa-paw"></i> <span>專案名稱</span></a>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <!-- menu profile quick info -->
-            <div class="profile">
-              <div class="profile_pic">
-                <img src="https://colorlib.com/polygon/gentelella/images/img.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
-              </div>
-            </div>
-            <!-- /menu profile quick info -->
-
-            <br />
+            {# project name #}
+            {% include "../blocks/projectname.html" %}
 
             <!-- sidebar menu -->
             {# sidebar block #}
@@ -42,7 +25,143 @@
 
         <!-- page content -->
         {# page content block #}
-        {% include "../blocks/userList.html" %}
+        <div class="right_col" role="main">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                  <div class="x_panel">
+                      <div class="x_title">
+                          <h2>用戶列表</h2>
+                          <ul class="nav navbar-right panel_toolbox">
+                              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                              </li>
+                              <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                  <ul class="dropdown-menu" role="menu">
+                                      <li><a href="#">Settings 1</a>
+                                      </li>
+                                      <li><a href="#">Settings 2</a>
+                                      </li>
+                                  </ul>
+                              </li>
+                              <li><a class="close-link"><i class="fa fa-close"></i></a>
+                              </li>
+                          </ul>
+                          <div class="clearfix"></div>
+                      </div>
+                      <div class="x_content">
+                          <p class="text-muted font-13 m-b-30">
+                              文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明文字說明
+                          </p>
+                          <table id="datatable-responsive" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
+                              <thead>
+                                  <tr>
+                                      <th>#</th>
+                                      <th>姓名</th>
+                                      <th>性別</th>
+                                      <th>電話</th>
+                                      <th>E-mail</th>
+                                      <th>建立時間</th>
+                                      <th>修改時間</th>
+                                      <th>備註</th>
+                                  </tr>
+                              </thead>
+                              <tbody>
+                                  <tr>
+                                      <td>1</td>
+                                      <td>林大一</td>
+                                      <td>男</td>
+                                      <td>0932444555</td>
+                                      <td>t.nixon@datatables.net</td>
+                                      <td>2011/04/25</td>
+                                      <td>2011/04/25</td>
+                                      <td>System Architect</td>
+                                  </tr>
+                                  <tr>
+                                      <td>2</td>
+                                      <td>陳大一</td>
+                                      <td>男</td>
+                                      <td>0933432123</td>
+                                      <td>g.winters@datatables.net</td>
+                                      <td>2011/07/25</td>
+                                      <td>2011/07/25</td>
+                                      <td>Accountant</td>
+                                  </tr>
+                                  <tr>
+                                      <td>3</td>
+                                      <td>黃大二</td>
+                                      <td>女</td>
+                                      <td>0923345112</td>
+                                      <td>a.cox@datatables.net</td>
+                                      <td>2009/01/12</td>
+                                      <td>2009/01/12</td>
+                                      <td>Junior Technical Author</td>
+                                  </tr>
+                                  <tr>
+                                      <td>4</td>
+                                      <td>金鐘一</td>
+                                      <td>男</td>
+                                      <td>0955332532</td>
+                                      <td>c.kelly@datatables.net</td>
+                                      <td>2012/03/29</td>
+                                      <td>2012/03/29</td>
+                                      <td>Senior Javascript Developer</td>
+                                  </tr>
+                                  <tr>
+                                      <td>5</td>
+                                      <td>洪一宏</td>
+                                      <td>女</td>
+                                      <td>0985632345</td>
+                                      <td>a.satou@datatables.net</td>
+                                      <td>2008/11/28</td>
+                                      <td>2008/11/28</td>
+                                      <td>Accountant</td>
+                                  </tr>
+                                  <tr>
+                                      <td>6</td>
+                                      <td>陳高輝</td>
+                                      <td>男</td>
+                                      <td>0933223773</td>
+                                      <td>b.williamson@datatables.net</td>
+                                      <td>2012/12/02</td>
+                                      <td>2012/12/02</td>
+                                      <td>Integration Specialist</td>
+                                  </tr>
+                                  <tr>
+                                      <td>7</td>
+                                      <td>吳高</td>
+                                      <td>男</td>
+                                      <td>0912345688</td>
+                                      <td>h.chandler@datatables.net</td>
+                                      <td>2012/08/06</td>
+                                      <td>2012/08/06</td>
+                                      <td>Sales Assistant</td>
+                                  </tr>
+                                  <tr>
+                                      <td>8</td>
+                                      <td>孫大</td>
+                                      <td>男</td>
+                                      <td>0912345679</td>
+                                      <td>r.davidson@datatables.net</td>
+                                      <td>2010/10/14</td>
+                                      <td>2010/10/14</td>
+                                      <td>Integration Specialist</td>
+                                  </tr>
+                                  <tr>
+                                      <td>9</td>
+                                      <td>梨大</td>
+                                      <td>女</td>
+                                      <td>0912345678</td>
+                                      <td>c.hurst@datatables.net</td>
+                                      <td>2009/09/15</td>
+                                      <td>2009/09/15</td>
+                                      <td>Javascript Developer</td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+            </div>
+            </div>
+
         <!-- /page content -->
 
         <!-- footer content -->
