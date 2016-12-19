@@ -39,7 +39,7 @@ module.exports = (sequelize, DataTypes) => {
         type: {
             type: DataTypes.ENUM,
             allowNull: false,
-            values: ['DEVICE', 'MEMBER', 'OTHER'],
+            values: ['DEVICE', 'USER', 'OTHER'],
             comment: '問題類型',
         },
         createdBy: {
@@ -59,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
                 CustomerService.belongsTo(models.Admin, { foreignKey: 'AdminId' });
                 CustomerService.belongsTo(models.Admin, { foreignKey: 'createdBy' });
                 CustomerService.belongsTo(models.Admin, { foreignKey: 'updatedBy' });
-                CustomerService.belongsTo(models.Member, { foreignKey: 'MemberId' });
+                CustomerService.belongsTo(models.User, { foreignKey: 'UserId' });
                 return;
             }
         }
