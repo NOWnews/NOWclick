@@ -64,7 +64,7 @@
                                         <span class="fa fa-indent form-control-feedback left" aria-hidden="true"></span>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                            <input type="text" name="phone" class="form-control" id="inputSuccess3" placeholder="識別碼 IOS:UUID, AndroidId, BOX:MAC Address...">
+                                            <input type="text" name="identifier" class="form-control" id="inputSuccess3" placeholder="識別碼 IOS:UUID, AndroidId, BOX:MAC Address...">
                                             <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
@@ -72,7 +72,7 @@
                                             <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                            <input type="text" name="address" class="form-control" id="inputSuccess5" placeholder="機器型號 ex:nexus, samsung...">
+                                            <input type="text" name="model" class="form-control" id="inputSuccess5" placeholder="機器型號 ex:nexus, samsung...">
                                             <span class="fa fa-address-card-o form-control-feedback right" aria-hidden="true"></span>
                                         </div>
 
@@ -89,18 +89,25 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                    <label class="control-label col-md-1 col-sm-1 col-xs-12">密碼</label>
-                                    <div class="col-md-4 col-sm-4 col-xs-12">
-                                        <input type="password" class="form-control" value="">
-                                    </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">備註</label>
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">OS版本</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
-                                            <textarea class="resizable_textarea form-control" name="memo" placeholder="備註文字"></textarea>
+                                            <input type="osVersion" class="form-control" placeholder="3.3" value="">
                                         </div>
                                     </div>
-
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">是否啟用</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label>
+                                                <input type="checkbox" class="js-switch" checked name="actived"/>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">推播Token</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <input type="token" class="form-control" placeholder="" value="">
+                                        </div>
+                                    </div>
                                     <div class="ln_solid"></div>
                                     <div class="form-group">
                                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-5">
@@ -129,7 +136,8 @@
     <script type="text/javascript" src="/static/js/jquery-2.2.4.min.js"></script>
     <!-- Bootstrap -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+     <!-- Switchery -->
+    <script src="/static/js/switchery/dist/switchery.min.js"></script>
     <!-- Custom Theme Scripts -->
     <script src="/static/js/custom.min.js"></script>
 
