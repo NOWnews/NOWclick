@@ -15,7 +15,7 @@ module.exports = async (req, res, next) => {
 
         let hashedPassword = getHashedPassword(password);
 
-        let user = await db.Member.findOne({
+        let user = await db.User.findOne({
                 where: {
                     username,
                     hashedPassword
@@ -39,9 +39,14 @@ module.exports = async (req, res, next) => {
             memo
         };
 
+        options.createdBy = 1;
+        options.updatedBy = 1;
+
         debug('options = %j', options);
 
-        let newUser = await db.Member.create(options);
+        let newUser = await db.User.create(options);
+
+        debug('newUser = %j', newUser);
 
         return res.redirect('/users');
 

@@ -57,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
             associate: (models) => {
                 Device.belongsTo(models.Admin, { foreignKey: 'createdBy' });
                 Device.belongsTo(models.Admin, { foreignKey: 'updatedBy' });
-                Device.belongsTo(models.Member);
+                Device.belongsTo(models.User);
                 return;
             }
         }

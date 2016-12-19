@@ -1,7 +1,7 @@
 import getHashedPassword from '../libs/getHashedPassword';
 
 module.exports = (sequelize, DataTypes) => {
-    let Member = sequelize.define('Member', {
+    let User = sequelize.define('User', {
         id: {
             type: DataTypes.CHAR(36, true),
             defaultValue: DataTypes.UUIDV4,
@@ -68,13 +68,13 @@ module.exports = (sequelize, DataTypes) => {
         comment: '會員資料表',
         classMethods: {
             associate: (models) => {
-                Member.hasMany(models.CustomerService);
-                Member.belongsTo(models.Admin, { foreignKey: 'createdBy' });
-                Member.belongsTo(models.Admin, { foreignKey: 'updatedBy' });
-                Member.hasMany(models.Device);
+                User.hasMany(models.CustomerService);
+                User.belongsTo(models.Admin, { foreignKey: 'createdBy' });
+                User.belongsTo(models.Admin, { foreignKey: 'updatedBy' });
+                User.hasMany(models.Device);
                 return;
             }
         }
     });
-    return Member;
+    return User;
 };
