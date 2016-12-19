@@ -65,96 +65,18 @@
                                   </tr>
                               </thead>
                               <tbody>
-                                  <tr>
-                                      <td>1</td>
-                                      <td>林大一</td>
-                                      <td>男</td>
-                                      <td>0932444555</td>
-                                      <td>t.nixon@datatables.net</td>
-                                      <td>2011/04/25</td>
-                                      <td>2011/04/25</td>
-                                      <td>System Architect</td>
-                                  </tr>
-                                  <tr>
-                                      <td>2</td>
-                                      <td>陳大一</td>
-                                      <td>男</td>
-                                      <td>0933432123</td>
-                                      <td>g.winters@datatables.net</td>
-                                      <td>2011/07/25</td>
-                                      <td>2011/07/25</td>
-                                      <td>Accountant</td>
-                                  </tr>
-                                  <tr>
-                                      <td>3</td>
-                                      <td>黃大二</td>
-                                      <td>女</td>
-                                      <td>0923345112</td>
-                                      <td>a.cox@datatables.net</td>
-                                      <td>2009/01/12</td>
-                                      <td>2009/01/12</td>
-                                      <td>Junior Technical Author</td>
-                                  </tr>
-                                  <tr>
-                                      <td>4</td>
-                                      <td>金鐘一</td>
-                                      <td>男</td>
-                                      <td>0955332532</td>
-                                      <td>c.kelly@datatables.net</td>
-                                      <td>2012/03/29</td>
-                                      <td>2012/03/29</td>
-                                      <td>Senior Javascript Developer</td>
-                                  </tr>
-                                  <tr>
-                                      <td>5</td>
-                                      <td>洪一宏</td>
-                                      <td>女</td>
-                                      <td>0985632345</td>
-                                      <td>a.satou@datatables.net</td>
-                                      <td>2008/11/28</td>
-                                      <td>2008/11/28</td>
-                                      <td>Accountant</td>
-                                  </tr>
-                                  <tr>
-                                      <td>6</td>
-                                      <td>陳高輝</td>
-                                      <td>男</td>
-                                      <td>0933223773</td>
-                                      <td>b.williamson@datatables.net</td>
-                                      <td>2012/12/02</td>
-                                      <td>2012/12/02</td>
-                                      <td>Integration Specialist</td>
-                                  </tr>
-                                  <tr>
-                                      <td>7</td>
-                                      <td>吳高</td>
-                                      <td>男</td>
-                                      <td>0912345688</td>
-                                      <td>h.chandler@datatables.net</td>
-                                      <td>2012/08/06</td>
-                                      <td>2012/08/06</td>
-                                      <td>Sales Assistant</td>
-                                  </tr>
-                                  <tr>
-                                      <td>8</td>
-                                      <td>孫大</td>
-                                      <td>男</td>
-                                      <td>0912345679</td>
-                                      <td>r.davidson@datatables.net</td>
-                                      <td>2010/10/14</td>
-                                      <td>2010/10/14</td>
-                                      <td>Integration Specialist</td>
-                                  </tr>
-                                  <tr>
-                                      <td>9</td>
-                                      <td>梨大</td>
-                                      <td>女</td>
-                                      <td>0912345678</td>
-                                      <td>c.hurst@datatables.net</td>
-                                      <td>2009/09/15</td>
-                                      <td>2009/09/15</td>
-                                      <td>Javascript Developer</td>
-                                  </tr>
+                                    {% for user in users %}
+                                        <tr>
+                                            <td>{{ user.index }}</td>
+                                            <td>{{ user.username }}</td>
+                                            <td>{{ user.gender }}</td>
+                                            <td>{{ user.phone }}</td>
+                                            <td>{{ user.email }}</td>
+                                            <td>{{ user.createdAt }}</td>
+                                            <td>{{ user.updatedAt }}</td>
+                                            <td>{{ user.memo }}</td>
+                                        </tr>
+                                    {% endfor %}
                               </tbody>
                           </table>
                       </div>
