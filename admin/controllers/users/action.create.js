@@ -5,8 +5,7 @@
 import Debug from 'debug';
 const debug = Debug('NOWott-admin:controllers:users:action.create');
 
-import { Member } from '../../../models';
-import { checkPassword } from '../../../libs';
+import { getHashedPassword } from '../../../libs';
 
 module.exports = async (req, res, next) => {
 
@@ -14,10 +13,12 @@ module.exports = async (req, res, next) => {
 
     try {
 
-        let user = await Member.findOne({
+        let hashedPassword = getHashedPassword(password);
+
+        let user = await db.Member.findOne({
                 where: {
-                    username: username,
-                    hashedPassword: checkPassword(password)
+                    username,
+                    hashedPassword
                 }
             });
 
@@ -28,19 +29,19 @@ module.exports = async (req, res, next) => {
         }
 
         let options = {
-            username: username,
+            username,
             // password 是一個虛擬欄位，他會幫你把 pwd hash，然後存入到 hashedPassword 這個欄位
-            password: password,
-            phone: phone,
-            email: email,
-            address: address,
-            gender: gender,
-            memo: memo,
+            password,
+            phone,
+            email,
+            address,
+            gender,
+            memo
         };
 
         debug('options = %j', options);
 
-        let newUser = await Member.create(options);
+        let newUser = await db.Member.create(options);
 
         return res.redirect('/users');
 
