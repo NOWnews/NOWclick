@@ -2,4 +2,205 @@
 
 {% block container %}
     <h1>/views/announces/one.html</h1>
+    <div class="container body">
+      <div class="main_container">
+        <div class="col-md-3 left_col">
+          <div class="left_col scroll-view">
+            {# project name #}
+            {% include "../blocks/projectname.html" %}
+
+            <!-- sidebar menu -->
+            {# sidebar block #}
+            {% include "../blocks/sidebar.html" %}
+
+            <!-- /sidebar menu -->
+
+          </div>
+        </div>
+
+        <!-- top navigation -->
+        {# top navigation block #}
+        {% include "../blocks/topNavigation.html" %}
+        <!-- /top navigation -->
+
+        <!-- page content -->
+        {# page content block #}
+        <div class="right_col" role="main">
+            <div class="">
+                <div class="page-title">
+                    <div class="title_left">
+                        <h3>公告事項明細</h3>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="x_panel">
+                            <div class="x_title">
+                                <h2>公告事項內容</h2>
+                                <ul class="nav navbar-right panel_toolbox">
+                                    <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                                        <ul class="dropdown-menu" role="menu">
+                                            <li><a href="#">Settings 1</a>
+                                            </li>
+                                            <li><a href="#">Settings 2</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a class="close-link"><i class="fa fa-close"></i></a>
+                                    </li>
+                                </ul>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="x_content">
+                                <br />
+                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">公告標題</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <input type="text" name="title" class="form-control" placeholder="搶攻「追劇」市場！台灣OTT百家爭鳴、靠內容決勝負" value="" required  readonly="readonly">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">公告內容</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <textarea class="resizable_textarea form-control" name="content" placeholder="公告內容" readonly="readonly">台灣的OTT市場，終於進入戰國時代。今年1月，串流影音霸主Netflix挾著全球資源，浩浩蕩蕩直入台灣，連帶掀起漫天烽火。先是宏達電董事長王雪紅 ...</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">是否啟用</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <label>
+                                                <input type="checkbox" class="js-switch" checked name="actived" disabled />
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">發布時間</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <fieldset>
+                                            <div class="control-group">
+                                                <div class="controls">
+                                                    <div class="xdisplay_inputx form-group has-feedback">
+                                                        <input type="text" class="form-control has-feedback-right" id="single_cal1" placeholder="First Name" aria-describedby="inputSuccess2Status">
+
+                                                        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">結束時間</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                        <fieldset>
+                                            <div class="control-group">
+                                                <div class="controls">
+                                                    <div class="xdisplay_inputx form-group has-feedback">
+                                                        <input type="text" class="form-control has-feedback-right" id="single_cal2" placeholder="First Name" aria-describedby="inputSuccess2Status">
+
+                                                        <span id="inputSuccess2Status" class="sr-only">(success)</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">建立時間</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                            <input type="text" name="createdAt" class="form-control" readonly="readonly" placeholder="2016/12/12" style="padding-left:50px">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">更新時間</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                            <input type="text" name="updatedAt" class="form-control" readonly="readonly" placeholder="2016/12/12" style="padding-left:50px">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">刪除時間</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                            <input type="text" name="deletedAt" class="form-control" readonly="readonly" placeholder="2016/12/12" style="padding-left:50px">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">建立者</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                                            <input type="text" name="createdBy" class="form-control" readonly="readonly" placeholder="中文字" style="padding-left:50px">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">最後更新者</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                                            <input type="text" name="updatedBy" class="form-control" readonly="readonly" placeholder="中文字" style="padding-left:50px">
+                                        </div>
+                                    </div>
+                                    <div class="ln_solid"></div>
+                                    <div class="form-group">
+                                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-5">
+                                            <button type="submit" class="btn btn-success">修改</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- /page content -->
+
+        <!-- footer content -->
+        {# footer block #}
+        {% include "../blocks/footer.html" %}
+        <!-- /footer content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="/static/js/jquery-2.2.4.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+     <!-- Switchery -->
+    <script src="/static/js/switchery/dist/switchery.min.js"></script>
+    <!-- bootstrap-daterangepicker -->
+    <script src="/static/js/moment/min/moment.min.js"></script>
+    <script src="/static/js/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- Custom Theme Scripts -->
+    <script src="/static/js/custom.min.js"></script>
+
+    <!-- bootstrap-daterangepicker -->
+
+
+    <script>
+    $(document).ready(function() {
+        $('#single_cal1').daterangepicker({
+            singleDatePicker: true,
+            singleClasses: "picker_1"
+        }, function(start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+
+        $('#single_cal2').daterangepicker({
+            singleDatePicker: true,
+            singleClasses: "picker_1"
+        }, function(start, end, label) {
+            console.log(start.toISOString(), end.toISOString(), label);
+        });
+    });
+    </script>
+    <!-- /bootstrap-daterangepicker -->
+
 {% endblock %}
