@@ -19,6 +19,10 @@ module.exports = async (req, res, next) => {
             updatedBy: 1
         };
 
+        if(!UserId || UserId === '') {
+            delete options.UserId;
+        }
+
         let newDevice = await db.Device.create(options);
         debug('newDevice = %j', newDevice);
 

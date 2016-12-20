@@ -21,7 +21,7 @@ module.exports = async (req, res, next) => {
             device.actived = device.actived === 1 ? '是' : '否';
         });
 
-        debug('device = %j', formatDevices);
+        debug('device = %j', devices);
         return res.render('devices/list.html', {
             devices
         });
