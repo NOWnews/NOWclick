@@ -15,8 +15,9 @@ module.exports = async (req, res, next) => {
             token,
             type,
             UserId, 
-            createdBy: 1,
-            updatedBy: 1
+            createdBy: config.superManagerId,
+            updatedBy: config.superManagerId,
+            ManagerId: config.superManagerId
         };
 
         if(!UserId || UserId === '') {

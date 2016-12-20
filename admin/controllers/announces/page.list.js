@@ -9,7 +9,16 @@ module.exports = async (req, res, next) => {
 
         let announces = await db.Announce.findAll({
             where: {},
-            include: [ db.Manager ],
+            include: [
+                {
+                    model: db.Manager,
+                    as: 'CreatedBy'
+                },
+                {
+                    model: db.Manager,
+                    as: 'UpdatedBy'
+                }
+            ],
             raw: true,
             nest: true,
             order: [['createdBy','DESC']]
