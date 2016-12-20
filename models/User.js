@@ -69,8 +69,8 @@ module.exports = (sequelize, DataTypes) => {
         classMethods: {
             associate: (models) => {
                 User.hasMany(models.CustomerService);
-                User.belongsTo(models.Admin, { foreignKey: 'createdBy' });
-                User.belongsTo(models.Admin, { foreignKey: 'updatedBy' });
+                User.belongsTo(models.Manager, { foreignKey: 'createdBy' });
+                User.belongsTo(models.Manager, { foreignKey: 'updatedBy' });
                 User.hasMany(models.Device);
                 return;
             }

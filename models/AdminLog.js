@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
         comment: '管理者後台操作 LOG',
         classMethods: {
             associate: (models) => {
-                AdminLog.belongsTo(models.Admin);
+                AdminLog.belongsTo(models.Manager);
                 return;
             }
         }

@@ -44,8 +44,8 @@ module.exports = (sequelize, DataTypes) => {
         comment: '設備的最新版本紀錄',
         classMethods: {
             associate: (models) => {
-                Version.belongsTo(models.Admin, { foreignKey: 'createdBy' });
-                Version.belongsTo(models.Admin, { foreignKey: 'updatedBy' });
+                Version.belongsTo(models.Manager, { foreignKey: 'createdBy' });
+                Version.belongsTo(models.Manager, { foreignKey: 'updatedBy' });
                 return;
             }
         }

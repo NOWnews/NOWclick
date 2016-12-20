@@ -1,6 +1,6 @@
 import getHashedPassword from '../libs/getHashedPassword';
 module.exports = (sequelize, DataTypes) => {
-    let Admin = sequelize.define('Admin', {
+    let Manager = sequelize.define('Manager', {
         id: {
             type: DataTypes.CHAR(36, true),
             defaultValue: DataTypes.UUIDV4,
@@ -36,8 +36,8 @@ module.exports = (sequelize, DataTypes) => {
         role: {
             type: DataTypes.ENUM,
             allowNull: false,
-            values: ['ADMIN', 'SYSTEM'],
-            comment: '角色（背景系統行為會使用SYSTEM，後台操作用Admin）',
+            values: ['Manager', 'SYSTEM'],
+            comment: '角色（背景系統行為會使用SYSTEM，後台操作用Manager）',
         },
         username: {
             type: DataTypes.STRING,
@@ -56,12 +56,12 @@ module.exports = (sequelize, DataTypes) => {
         comment: '後台管理者資料表',
         classMethods: {
             associate: (models) => {
-                Admin.hasMany(models.AdminLog);
-                Admin.hasMany(models.Announce);
-                Admin.hasMany(models.CustomerService);
+                Manager.hasMany(models.AdminLog);
+                Manager.hasMany(models.Announce);
+                Manager.hasMany(models.CustomerService);
                 return;
             }
         }
     });
-    return Admin;
+    return Manager;
 };
