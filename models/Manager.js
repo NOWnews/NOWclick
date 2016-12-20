@@ -57,7 +57,7 @@ module.exports = (sequelize, DataTypes) => {
         classMethods: {
             associate: (models) => {
                 Manager.hasMany(models.AdminLog);
-                Manager.hasMany(models.Announce);
+                // Manager.hasMany(models.Announce);
                 Manager.hasMany(models.CustomerService);
                 return;
             }

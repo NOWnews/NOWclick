@@ -19,8 +19,13 @@ module.exports = (sequelize, DataTypes) => {
             defaultValue: false,
             comment: '是否啟用',
         },
-        content: {
+        title: {
             type: DataTypes.STRING,
+            allowNull: false,
+            comment: '公告標題',
+        },
+        content: {
+            type: DataTypes.TEXT,
             allowNull: false,
             comment: '公告內容',
         },

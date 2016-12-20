@@ -39,8 +39,8 @@ module.exports = async (req, res, next) => {
             memo
         };
 
-        options.createdBy = 1;
-        options.updatedBy = 1;
+        options.createdBy = config.superManagerId;
+        options.updatedBy = config.superManagerId;
 
         debug('options = %j', options);
 

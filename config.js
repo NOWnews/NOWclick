@@ -35,7 +35,7 @@ module.exports = {
          * HTTP HEADER 欄位 key
          */
         header,
-        superAdminId: 1,
+        superManagerId: 1,
     },
     staging: {
         db: {
@@ -65,7 +65,7 @@ module.exports = {
          * HTTP HEADER 欄位 key
          */
         header,
-        superAdminId: '1', //目前未知需依照實際情況
+        superManagerId: '1', //目前未知需依照實際情況
     },
     production: {
         db: {
@@ -95,6 +95,6 @@ module.exports = {
          * HTTP HEADER 欄位 key
          */
         header,
-        superAdminId: '1', //目前未知需依照實際情況
+        superManagerId: '1', //目前未知需依照實際情況
     },
 };
