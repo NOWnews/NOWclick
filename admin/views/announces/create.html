@@ -57,7 +57,7 @@
                             </div>
                             <div class="x_content">
                                 <br />
-                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post" action="/announces/create">
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">公告標題</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
@@ -85,7 +85,7 @@
                                             <div class="control-group">
                                                 <div class="controls">
                                                     <div class="xdisplay_inputx form-group has-feedback">
-                                                        <input type="text" class="form-control has-feedback-right" id="single_cal1" placeholder="First Name" aria-describedby="inputSuccess2Status">
+                                                        <input name="startTime" type="text" class="form-control has-feedback-right" id="single_cal1" placeholder="First Name" aria-describedby="inputSuccess2Status">
 
                                                         <span id="inputSuccess2Status" class="sr-only">(success)</span>
                                                     </div>
@@ -101,7 +101,7 @@
                                             <div class="control-group">
                                                 <div class="controls">
                                                     <div class="xdisplay_inputx form-group has-feedback">
-                                                        <input type="text" class="form-control has-feedback-right" id="single_cal2" placeholder="First Name" aria-describedby="inputSuccess2Status">
+                                                        <input name="endTime" type="text" class="form-control has-feedback-right" id="single_cal2" placeholder="First Name" aria-describedby="inputSuccess2Status">
 
                                                         <span id="inputSuccess2Status" class="sr-only">(success)</span>
                                                     </div>

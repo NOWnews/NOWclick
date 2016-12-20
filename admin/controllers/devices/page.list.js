@@ -9,7 +9,7 @@ module.exports = async (req, res, next) => {
 
         let devices = await db.Device.findAll({
             where: {},
-            include: [db.User],
+            include: [ db.User ],
             raw: true,
             nest: true
         });
