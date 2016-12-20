@@ -57,18 +57,18 @@
                             </div>
                             <div class="x_content">
                                 <br />
-                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" method="post" action="/devices/create">
                                     <div class="form-group">
-                                        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+  <!--                                       <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                         <input type="text" name="id" class="form-control has-feedback-left" id="inputSuccess2" placeholder="設備ID">
                                         <span class="fa fa-indent form-control-feedback left" aria-hidden="true"></span>
-                                        </div>
+                                        </div> -->
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
                                             <input type="text" name="identifier" class="form-control" id="inputSuccess3" placeholder="識別碼 IOS:UUID, AndroidId, BOX:MAC Address...">
                                             <span class="fa fa-lightbulb-o form-control-feedback right" aria-hidden="true"></span>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                            <input type="text" name="MemberId" class="form-control has-feedback-left" id="inputSuccess4" placeholder="用戶ID">
+                                            <input type="text" name="UserId" class="form-control has-feedback-left" id="inputSuccess4" placeholder="用戶ID">
                                             <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
@@ -105,7 +105,7 @@
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">推播Token</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
-                                            <input type="token" class="form-control" placeholder="" value="">
+                                            <input name="token" type="token" class="form-control" placeholder="" value="">
                                         </div>
                                     </div>
                                     <div class="ln_solid"></div>
