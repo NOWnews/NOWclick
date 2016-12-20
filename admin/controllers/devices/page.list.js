@@ -15,11 +15,10 @@ module.exports = async (req, res, next) => {
         });
 
         // 正規化資料格式
-        let formatDevices = _.map(devices, (device) => {
+        _.forEach(devices, (device) => {
             device.createdAt = moment(device.createdAt).tz('Asia/Taipei').format('YYYY/MM/DD HH:mm');
             device.updatedAt = moment(device.updatedAt).tz('Asia/Taipei').format('YYYY/MM/DD HH:mm');
             device.actived = device.actived === 1 ? '是' : '否';
-            return device;
         });
 
         debug('device = %j', formatDevices);

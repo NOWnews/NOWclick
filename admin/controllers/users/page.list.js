@@ -13,7 +13,7 @@ module.exports = async (req, res, next) => {
         });
 
         // 正規化資料格式
-        let formatUsers = _.map(users, (user) => {
+        _.forEach(users, (user) => {
             user.createdAt = moment(user.createdAt).tz('Asia/Taipei').format('YYYY/MM/DD HH:mm');
             user.updatedAt = moment(user.updatedAt).tz('Asia/Taipei').format('YYYY/MM/DD HH:mm');
 
@@ -28,8 +28,6 @@ module.exports = async (req, res, next) => {
             if(!user.gender) {
                 user.gender = '無';
             }
-
-            return user;
         });
 
         debug('result = %j', users);
