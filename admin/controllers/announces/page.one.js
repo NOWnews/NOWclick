@@ -32,6 +32,8 @@ module.exports = async (req, res, next) => {
 
         announce.createdAt = moment(announce.createdAt).tz('Asia/Taipei').format('YYYY/MM/DD HH:mm');
         announce.updatedAt = moment(announce.updatedAt).tz('Asia/Taipei').format('YYYY/MM/DD HH:mm');
+        announce.startTime = moment(announce.startTime).tz('Asia/Taipei').format('YYYY/MM/DD');
+        announce.endTime = moment(announce.endTime).tz('Asia/Taipei').format('YYYY/MM/DD');
 
         return res.render('announces/one.html', {
             announce

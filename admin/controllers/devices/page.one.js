@@ -33,7 +33,6 @@ module.exports = async (req, res, next) => {
 
         device.createdAt = moment(device.createdAt).tz('Asia/Taipei').format('YYYY/MM/DD HH:mm');
         device.updatedAt = moment(device.updatedAt).tz('Asia/Taipei').format('YYYY/MM/DD HH:mm');
-        device.actived = device.actived === 1 ? '是' : '否';
 
         if(!device.User) {
             device.User = {};

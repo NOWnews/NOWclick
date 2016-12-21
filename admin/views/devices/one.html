@@ -83,21 +83,25 @@
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">設備類型</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
                                             <select class="form-control" name="type" readonly="readonly" disabled>
-                                                <option>BOX</option>
+                                                <option>{{ device.type }}</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">OS版本</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
-                                            <input type="osVersion" class="form-control" readonly="readonly" value="{{ device.osVersion }}">
+                                            <input name="osVersion" type="osVersion" class="form-control" value="{{ device.osVersion }}">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">是否啟用</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
                                             <label>
-                                                <input type="checkbox" class="js-switch" checked name="actived"/>
+                                                {% if device.actived == 1 %}
+                                                    <input type="checkbox" class="js-switch" checked name="actived" />
+                                                {% else %}
+                                                    <input type="checkbox" class="js-switch" name="actived" />
+                                                {% endif %}
                                             </label>
                                         </div>
                                     </div>
