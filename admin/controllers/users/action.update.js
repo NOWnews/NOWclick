@@ -32,8 +32,8 @@ module.exports = async (req, res, next) => {
 
         let updatedUser = await user.save();
         debug('update user = %j', updatedUser);
-
-        return res.redirect(`/users/${user.id}`);
+        // return res.redirect(`/users/${user.id}`);
+        return res.redirect(/users/);
     } catch(err) {
         return next(err);
     }

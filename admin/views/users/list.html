@@ -62,6 +62,7 @@
                                       <th>建立時間</th>
                                       <th>修改時間</th>
                                       <th>備註</th>
+                                      <th class="column-title no-link last"><span class="nobr">詳細內容</span>
                                   </tr>
                               </thead>
                               <tbody>
@@ -75,6 +76,7 @@
                                             <td>{{ user.createdAt }}</td>
                                             <td>{{ user.updatedAt }}</td>
                                             <td>{{ user.memo }}</td>
+                                            <td class=" last"><a href="/users/{{ user.id }}" style="font-weight:bold">前往明細 <i class="fa fa-arrow-circle-left"></i></a></td>
                                         </tr>
                                     {% endfor %}
                               </tbody>

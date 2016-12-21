@@ -63,6 +63,7 @@
                                       <th>建立時間</th>
                                       <th>修改時間</th>
                                       <th>推播Token</th>
+                                      <th class="column-title no-link last"><span class="nobr">詳細內容</span>
                                   </tr>
                               </thead>
                               <tbody>
@@ -77,6 +78,7 @@
                                             <td>{{ device.createdAt }}</td>
                                             <td>{{ device.updatedAt }}</td>
                                             <td>{{ device.token }}</td>
+                                            <td class=" last"><a href="/devices/{{ device.id }}" style="font-weight:bold">前往明細 <i class="fa fa-arrow-circle-left"></i></a></td>
                                         </tr>
                                     {% endfor %}
 <!--                                   <tr>

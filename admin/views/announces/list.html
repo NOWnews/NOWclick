@@ -63,6 +63,7 @@
                                       <th>建立者</th>
                                       <th>建立時間</th>
                                       <th>修改時間</th>
+                                      <th class="column-title no-link last"><span class="nobr">詳細內容</span>
                                   </tr>
                               </thead>
                               <tbody>
@@ -77,6 +78,7 @@
                                             <td>{{ announce.Manager.username }}</td>
                                             <td>{{ announce.createdAt }}</td>
                                             <td>{{ announce.updatedAt }}</td>
+                                            <td class=" last"><a href="/announces/{{ announce.id }}" style="font-weight:bold">前往明細 <i class="fa fa-arrow-circle-left"></i></a></td>
                                         </tr>
                                     {% endfor %}
                               </tbody>

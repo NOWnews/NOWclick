@@ -21,7 +21,8 @@ module.exports = async (req, res, next) => {
 
         let updatedDevice = await device.save();
 
-        return res.redirect(`/devices/${device.id}`);
+        // return res.redirect(`/devices/${device.id}`);
+        return res.redirect(/devices/);
     } catch(err) {
         return next(err);
     }
