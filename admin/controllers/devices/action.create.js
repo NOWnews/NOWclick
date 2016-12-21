@@ -1,5 +1,5 @@
 import Debug from 'debug';
-const debug = Debug('NOWott-admin:controllers:users:action.create');
+const debug = Debug('NOWott-admin:controllers:devices:action.create');
 
 module.exports = async (req, res, next) => {
 

@@ -57,24 +57,29 @@
                             </div>
                             <div class="x_content">
                                 <br />
-                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="/announces/{{ announce.id }}" method="post">
+                                    <input type="hidden" name="_method" value="PUT"/>
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">公告標題</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
-                                            <input type="text" name="title" class="form-control" value="{{ announce.title }}" required  readonly="readonly">
+                                            <input type="text" name="title" class="form-control" value="{{ announce.title }}" required>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">公告內容</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
-                                            <textarea class="resizable_textarea form-control" name="content" placeholder="公告內容" readonly="readonly">{{ announce.content }}</textarea>
+                                            <textarea class="resizable_textarea form-control" name="content" placeholder="公告內容">{{ announce.content }}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">是否啟用</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
                                             <label>
-                                                <input type="checkbox" class="js-switch" checked name="actived" disabled />
+                                                {% if announce.actived == 1 %}
+                                                    <input type="checkbox" class="js-switch" checked name="actived" />
+                                                {% else %}
+                                                    <input type="checkbox" class="js-switch" name="actived" />
+                                                {% endif %}
                                             </label>
                                         </div>
                                     </div>
@@ -85,7 +90,7 @@
                                             <div class="control-group">
                                                 <div class="controls">
                                                     <div class="xdisplay_inputx form-group has-feedback">
-                                                        <input type="text" class="form-control has-feedback-right" id="single_cal1" placeholder="First Name" aria-describedby="inputSuccess2Status" >
+                                                        <input name="startTime" type="text" class="form-control has-feedback-right" id="single_cal1" placeholder="First Name" aria-describedby="inputSuccess2Status">
 
                                                         <span id="inputSuccess2Status" class="sr-only">(success)</span>
                                                     </div>
@@ -101,7 +106,7 @@
                                             <div class="control-group">
                                                 <div class="controls">
                                                     <div class="xdisplay_inputx form-group has-feedback">
-                                                        <input type="text" class="form-control has-feedback-right" id="single_cal2" placeholder="First Name" aria-describedby="inputSuccess2Status">
+                                                        <input name="endTime" type="text" class="form-control has-feedback-right" id="single_cal2" placeholder="First Name" aria-describedby="inputSuccess2Status">
 
                                                         <span id="inputSuccess2Status" class="sr-only">(success)</span>
                                                     </div>
@@ -187,15 +192,23 @@
     <script>
     $(document).ready(function() {
         $('#single_cal1').daterangepicker({
+            locale: {
+                format: 'YYYY/MM/DD',
+            },
             singleDatePicker: true,
-            singleClasses: "picker_1"
+            singleClasses: "picker_1",
+            startDate: "{{announce.startTime}}"
         }, function(start, end, label) {
             console.log(start.toISOString(), end.toISOString(), label);
         });
 
         $('#single_cal2').daterangepicker({
+            locale: {
+                format: 'YYYY/MM/DD',
+            },
             singleDatePicker: true,
-            singleClasses: "picker_1"
+            singleClasses: "picker_1",
+            startDate: "{{announce.endTime}}"
         }, function(start, end, label) {
             console.log(start.toISOString(), end.toISOString(), label);
         });
