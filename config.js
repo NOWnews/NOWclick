@@ -29,7 +29,7 @@ module.exports = {
                 logging: false, //看 SQL 語法
                 timezone: '+08:00'
             },
-            resetDB: true
+            resetDB: false
         },
         /*
          * HTTP HEADER 欄位 key
