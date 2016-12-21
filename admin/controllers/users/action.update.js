@@ -1,8 +1,6 @@
 import Debug from 'debug';
 const debug = Debug('NOWott-admin:controllers:users:action.update');
 
-import { getHashedPassword } from '../../../libs';
-
 module.exports = async (req, res, next) => {
 
     let { id } = req.params;
