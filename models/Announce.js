@@ -68,8 +68,8 @@ module.exports = (sequelize, DataTypes) => {
         comment: '佈告欄',
         classMethods: {
             associate: (models) => {
-                Announce.belongsTo(models.Manager, { foreignKey: 'createdBy' });
-                Announce.belongsTo(models.Manager, { foreignKey: 'updatedBy' });
+                Announce.belongsTo(models.Manager, { as: 'CreatedBy', foreignKey: 'createdBy' });
+                Announce.belongsTo(models.Manager, { as: 'UpdatedBy', foreignKey: 'updatedBy' });
                 return;
             }
         }

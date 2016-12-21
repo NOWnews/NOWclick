@@ -57,22 +57,23 @@
                             </div>
                             <div class="x_content">
                                 <br />
-                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+                                <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="/users/{{ user.id }}" method="post">
+                                    <input type="hidden" name="_method" value="PUT"/>
                                     <div class="form-group">
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                        <input type="text" name="username" class="form-control has-feedback-left" id="inputSuccess2" placeholder="歐巴馬" readonly="readonly">
+                                        <input type="text" name="username" class="form-control has-feedback-left" id="inputSuccess2" value="{{ user.username }}">
                                         <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                            <input type="text" name="phone" class="form-control" id="inputSuccess3" placeholder="0912345678" readonly="readonly">
+                                            <input type="text" name="phone" class="form-control" id="inputSuccess3" value="{{ user.phone }}">
                                             <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                            <input type="text" name="email" class="form-control has-feedback-left" id="inputSuccess4" placeholder="abcobama@gmail.com" readonly="readonly">
+                                            <input type="text" name="email" class="form-control has-feedback-left" id="inputSuccess4" value="{{ user.email }}">
                                             <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                                            <input type="text" name="address" class="form-control" id="inputSuccess5" placeholder="台灣省台北市內湖區大中路無尾巷" readonly="readonly">
+                                            <input type="text" name="address" class="form-control" id="inputSuccess5" value="{{ user.address }}">
                                             <span class="fa fa-address-card-o form-control-feedback right" aria-hidden="true"></span>
                                         </div>
 
@@ -91,51 +92,51 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="form-group">
+<!--                                     <div class="form-group">
                                     <label class="control-label col-md-1 col-sm-1 col-xs-12">密碼</label>
                                     <div class="col-md-4 col-sm-4 col-xs-12">
                                         <input type="password" class="form-control" value="000000" readonly="readonly">
                                     </div>
-                                    </div>
+                                    </div> -->
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">備註</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
-                                            <textarea class="resizable_textarea form-control" name="memo" placeholder="中年男子愛看謎片" readonly="readonly"></textarea>
+                                            <textarea class="resizable_textarea form-control" name="memo">{{ user.memo }}</textarea>
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">建立時間</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
                                             <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
-                                            <input type="text" name="createdAt" class="form-control" readonly="readonly" placeholder="2016/12/12" style="padding-left:50px">
+                                            <input type="text" name="createdAt" class="form-control" readonly="readonly" style="padding-left:50px" value="{{ user.createdAt }}">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">更新時間</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
                                             <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
-                                            <input type="text" name="updatedAt" class="form-control" readonly="readonly" placeholder="2016/12/12" style="padding-left:50px">
+                                            <input type="text" name="updatedAt" class="form-control" readonly="readonly" style="padding-left:50px" value="{{ user.updatedAt }}">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">刪除時間</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
                                             <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
-                                            <input type="text" name="deletedAt" class="form-control" readonly="readonly" placeholder="2016/12/12" style="padding-left:50px">
+                                            <input type="text" name="deletedAt" class="form-control" readonly="readonly" style="padding-left:50px" value="{{ user.deletedAt }}">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">建立者</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
                                             <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-                                            <input type="text" name="createdBy" class="form-control" readonly="readonly" placeholder="中文字" style="padding-left:50px">
+                                            <input type="text" name="createdBy" class="form-control" readonly="readonly" style="padding-left:50px" value="{{ user.CreatedBy.username }}">
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="control-label col-md-1 col-sm-1 col-xs-12">最後更新者</label>
                                         <div class="col-md-4 col-sm-4 col-xs-12">
                                             <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-                                            <input type="text" name="updatedBy" class="form-control" readonly="readonly" placeholder="中文字" style="padding-left:50px">
+                                            <input type="text" name="updatedBy" class="form-control" readonly="readonly" style="padding-left:50px" value="{{ user.UpdatedBy.username }}">
                                         </div>
                                     </div>
                                     <div class="ln_solid"></div>

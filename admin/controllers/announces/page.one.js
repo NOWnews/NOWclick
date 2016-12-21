@@ -1,13 +1,41 @@
+import Debug from 'debug';
+const debug = Debug('NOWott-admin:controllers:announces:page.one');
+
+import moment from 'moment';
 
 module.exports = async (req, res, next) => {
 
-    try{
-        let result = await new Promise((resolve, reject) => {
-            return resolve('controllers/announces/one.list.js');
-        });
+    let { id } = req.params;
+    debug('id = %s', id);
 
-        console.log(result);
-        return res.render('announces/one.html');
+    try{
+
+        let announce = await db.Announce.findById(id, {
+            include: [
+                {
+                    model: db.Manager,
+                    as: 'CreatedBy'
+                },
+                {
+                    model: db.Manager,
+                    as: 'UpdatedBy'
+                }
+            ],
+            raw: true,
+            nest: true
+        });
+        debug('announce = %j', announce);
+
+        if(!announce) {
+            throw new Error('找不到 announce 資料');
+        }
+
+        announce.createdAt = moment(announce.createdAt).tz('Asia/Taipei').format('YYYY/MM/DD HH:mm');
+        announce.updatedAt = moment(announce.updatedAt).tz('Asia/Taipei').format('YYYY/MM/DD HH:mm');
+
+        return res.render('announces/one.html', {
+            announce
+        });
     }
     catch(err) {
         return next(err);
