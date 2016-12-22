@@ -61,12 +61,13 @@
                                 <form id="demo-form" data-parsley-validate method="post" action="/managers/create">
                                     <label for="fullname">使用者名稱 :</label>
                                     <input type="text" id="fullname" class="form-control" name="username" required />
+
+                                    <label for="email">Email * :</label>
+                                    <input type="email" name="email" id="email" class="form-control" name="email" data-parsley-trigger="change" required />
                                     <div class="form-group">
                                         <label>密碼</label>
                                         <input type="password" class="form-control" name="password" placeholder="密碼">
                                     </div>
-                                    <label for="email">Email * :</label>
-                                    <input type="email" name="email" id="email" class="form-control" name="email" data-parsley-trigger="change" required />
                                     <label for="heard">角色</label>
                                     <select id="heard" class="form-control" required name="role">
                                         <option value="MANAGER">管理員</option>
