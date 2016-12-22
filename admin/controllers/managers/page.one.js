@@ -10,7 +10,20 @@ module.exports = async (req, res, next) => {
 
     try{
 
-        let manager = await db.Manager.findById(id);
+        let manager = await db.Manager.findById(id, {
+            include: [
+                {
+                    model: db.Manager,
+                    as: 'CreatedBy'
+                },
+                {
+                    model: db.Manager,
+                    as: 'UpdatedBy'
+                }
+            ],
+            raw: true,
+            nest: true
+        });
         debug('manager = %j', manager);
 
         if(!manager) {

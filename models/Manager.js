@@ -57,6 +57,8 @@ module.exports = (sequelize, DataTypes) => {
         classMethods: {
             associate: (models) => {
                 Manager.hasMany(models.AdminLog);
+                Manager.belongsTo(models.Manager, { as: 'CreatedBy', foreignKey: 'createdBy' });
+                Manager.belongsTo(models.Manager, { as: 'UpdatedBy', foreignKey: 'updatedBy' });
                 // Manager.hasMany(models.Announce);
                 Manager.hasMany(models.CustomerService);
                 return;

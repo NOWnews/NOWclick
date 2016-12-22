@@ -23,7 +23,9 @@ module.exports = async (req, res, next) => {
         let options = {
             username,
             password,
-            email
+            email,
+            createdBy: req.session.Manager.id,
+            updatedBy: req.session.Manager.id
         };
 
         if(role && role !== '') {
