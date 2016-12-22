@@ -58,17 +58,21 @@
                                     <th>E-mail</th>
                                     <th>建立時間</th>
                                     <th>修改時間</th>
+                                    <th class="column-title no-link last"><span class="nobr">詳細內容</span>
                                   </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>管理者1</td>
-                                    <td>管理員</td>
-                                    <td>abc@nownews.com</td>
-                                    <td>2016/12/20</td>
-                                    <td>2016/12/20</td>
-                                </tr>
+                                {% for manager in managers %}
+                                    <tr>
+                                        <td>{{ manager.index }}</td>
+                                        <td>{{ manager.username }}</td>
+                                        <td>{{ manager.role }}</td>
+                                        <td>{{ manager.email }}</td>
+                                        <td>{{ manager.createdAt }}</td>
+                                        <td>{{ manager.updatedAt }}</td>
+                                        <td class=" last"><a href="/managers/{{ manager.id }}" style="font-weight:bold">前往明細 <i class="fa fa-arrow-circle-left"></i></a></td>
+                                    </tr>
+                                {% endfor %}
                             </tbody>
                         </table>
                     </div>
