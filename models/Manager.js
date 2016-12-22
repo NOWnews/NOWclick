@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
         role: {
             type: DataTypes.ENUM,
             allowNull: false,
-            values: ['Manager', 'SYSTEM'],
+            values: ['MANAGER', 'SYSTEM'],
             comment: '角色（背景系統行為會使用SYSTEM，後台操作用Manager）',
         },
         username: {
