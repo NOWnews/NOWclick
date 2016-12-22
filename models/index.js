@@ -26,18 +26,30 @@ Object.keys(db).forEach((modelName) => {
 
 (async() => {
     try {
+
         if (resetDB && env === 'dev') {
             await sequelize.query(`DROP DATABASE IF EXISTS ${database};`);
             await sequelize.query(`CREATE DATABASE IF NOT EXISTS ${database} CHARACTER SET utf8 COLLATE utf8_unicode_ci;`);
             await sequelize.query(`USE ${database};`);
         }
         await sequelize.sync();
+
+
+        let { superManager, versions } = initData;
+
+        // init default data
+        await db.Manager.findOrCreate({
+            defaults: superManager,
+            where: {
+                email: superManager.email,
+            },
+        });
+
         if (!resetDB) {
             return;
         }
 
-        let { managers, versions } = initData;
-        await db.Manager.bulkCreate(managers);
+        // fakeData for dev mode
         await db.Version.bulkCreate(versions);
 
     } catch (e) {

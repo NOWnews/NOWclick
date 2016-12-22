@@ -1,18 +1,13 @@
 import Promise from 'bluebird';
-let superManagerId = 1, managerId = 2;
-module.exports.managers = [{
+let superManagerId = 1;
+
+module.exports.superManager = {
     id: superManagerId,
     email: 'superManager@nownews.com',
-    password: 'superManager',
+    password: 'SuperManager',
     role: 'SYSTEM',
     username: 'SuperManager',
-}, {
-    id: managerId,
-    email: 'manager@nownews.com',
-    password: 'manager',
-    role: 'MANAGER',
-    username: 'manager',
-}, ];
+};
 
 module.exports.versions = [{
     deviceType: 'BOX',
