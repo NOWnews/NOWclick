@@ -35,9 +35,9 @@ Object.keys(db).forEach((modelName) => {
         await sequelize.sync();
 
 
-        let { superManager, manager, versions } = initData;
+        let { superManager, versions } = initData;
 
-        // initDefaultData
+        // init default data
         await db.Manager.findOrCreate({
             defaults: superManager,
             where: {
@@ -48,8 +48,8 @@ Object.keys(db).forEach((modelName) => {
         if (!resetDB) {
             return;
         }
-        // fakeData
-        await db.Manager.create(manager);
+
+        // fakeData for dev mode
         await db.Version.bulkCreate(versions);
 
     } catch (e) {

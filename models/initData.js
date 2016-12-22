@@ -9,14 +9,6 @@ module.exports.superManager = {
     username: 'SuperManager',
 };
 
-module.exports.manager = {
-    id: managerId,
-    email: 'manager@nownews.com',
-    password: 'manager',
-    role: 'MANAGER',
-    username: 'manager',
-};
-
 module.exports.versions = [{
     deviceType: 'BOX',
     publishedDate: '2016-12-01',
