@@ -1,5 +1,5 @@
 import Promise from 'bluebird';
-let superManagerId = 1, managerId = 2;
+let superManagerId = 1;
 
 module.exports.superManager = {
     id: superManagerId,
