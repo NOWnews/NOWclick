@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
         role: {
             type: DataTypes.ENUM,
             allowNull: false,
-            values: ['Manager', 'SYSTEM'],
+            values: ['MANAGER', 'SYSTEM'],
             comment: '角色（背景系統行為會使用SYSTEM，後台操作用Manager）',
         },
         username: {
@@ -57,6 +57,8 @@ module.exports = (sequelize, DataTypes) => {
         classMethods: {
             associate: (models) => {
                 Manager.hasMany(models.AdminLog);
+                Manager.belongsTo(models.Manager, { as: 'CreatedBy', foreignKey: 'createdBy' });
+                Manager.belongsTo(models.Manager, { as: 'UpdatedBy', foreignKey: 'updatedBy' });
                 // Manager.hasMany(models.Announce);
                 Manager.hasMany(models.CustomerService);
                 return;

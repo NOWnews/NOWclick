@@ -21,8 +21,8 @@ module.exports = async (req, res, next) => {
         debug('options = %j', options);
 
         // 先暫時帶入
-        options.createdBy = config.superManagerId;
-        options.updatedBy = config.superManagerId;
+        options.createdBy = req.session.Manager.id;
+        options.updatedBy = req.session.Manager.id;
 
         let newAnnounce = await db.Announce.create(options);
         debug('new announce = %j', newAnnounce);

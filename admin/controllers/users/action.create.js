@@ -13,12 +13,9 @@ module.exports = async (req, res, next) => {
 
     try {
 
-        let hashedPassword = getHashedPassword(password);
-
         let user = await db.User.findOne({
                 where: {
-                    username,
-                    hashedPassword
+                    email
                 }
             });
 
@@ -39,8 +36,8 @@ module.exports = async (req, res, next) => {
             memo
         };
 
-        options.createdBy = config.superManagerId;
-        options.updatedBy = config.superManagerId;
+        options.createdBy = req.session.Manager.id;
+        options.updatedBy = req.session.Manager.id;
 
         debug('options = %j', options);
 

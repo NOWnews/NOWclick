@@ -30,6 +30,7 @@ module.exports = async (req, res, next) => {
         }
         debug('user = %j', user);
 
+        user.set('updatedBy', req.session.Manager.id);
         let updatedUser = await user.save();
         debug('update user = %j', updatedUser);
         // return res.redirect(`/users/${user.id}`);
