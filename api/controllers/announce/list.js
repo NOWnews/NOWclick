@@ -29,6 +29,7 @@ module.exports = async (req, res, next) => {
                 ]
             },
             order: 'startTime ASC',
+            raw: true,
         });
         return res.json({ result });
 

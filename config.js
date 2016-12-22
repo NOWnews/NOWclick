@@ -20,6 +20,7 @@ module.exports = {
                     min: 0,
                     idle: 10000,
                 },
+                dialect: 'mariadb',
                 define: {
                     paranoid: true, //啟用 deletedAt
                     freezeTableName: true, //固定資料表不為複數，例如: Admin -> Admins
@@ -50,6 +51,7 @@ module.exports = {
                     min: 0,
                     idle: 10000,
                 },
+                dialect: 'mariadb',
                 define: {
                     paranoid: true, //啟用 deletedAt
                     freezeTableName: true, //固定資料表不為複數，例如: Admin -> Admins
@@ -80,6 +82,7 @@ module.exports = {
                     min: 0,
                     idle: 10000,
                 },
+                dialect: 'mariadb',
                 define: {
                     paranoid: true, //啟用 deletedAt
                     freezeTableName: true, //固定資料表不為複數，例如: Admin -> Admins
