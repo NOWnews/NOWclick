@@ -41,7 +41,7 @@ module.exports = {
     staging: {
         db: {
             username: 'root',
-            password: 'root',
+            password: '5j18ru,4',
             database: 'NOWott',
             options: {
                 host: '127.0.0.1',
@@ -72,7 +72,7 @@ module.exports = {
     production: {
         db: {
             username: 'root',
-            password: 'root',
+            password: '5j18ru,4',
             database: 'NOWott',
             options: {
                 host: '127.0.0.1',
