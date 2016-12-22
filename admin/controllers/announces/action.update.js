@@ -31,6 +31,7 @@ module.exports = async (req, res, next) => {
 
         actived = actived ? true : false;
         announce.set('actived', actived);
+        announce.set('updatedBy', req.session.Manager.id);
 
         let updatedAnnounce = await announce.save();
 

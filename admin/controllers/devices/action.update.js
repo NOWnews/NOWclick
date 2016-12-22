@@ -18,6 +18,7 @@ module.exports = async (req, res, next) => {
 
         actived = actived ? true : false;
         device.set('actived', actived);
+        device.set('updatedBy', req.session.Manager.id);
 
         let updatedDevice = await device.save();
 

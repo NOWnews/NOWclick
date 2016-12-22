@@ -15,9 +15,9 @@ module.exports = async (req, res, next) => {
             token,
             type,
             UserId, 
-            createdBy: config.superManagerId,
-            updatedBy: config.superManagerId,
-            ManagerId: config.superManagerId
+            createdBy: req.session.Manager.id,
+            updatedBy: req.session.Manager.id,
+            ManagerId: req.session.Manager.id
         };
 
         if(!UserId || UserId === '') {
