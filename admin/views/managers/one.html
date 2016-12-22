@@ -58,7 +58,7 @@
                             <div class="x_content">
                                 <br />
                                 <!-- start form for validation -->
-                                <form id="demo-form" data-parsley-validate>
+                                <form id="demo-form" data-parsley-validate class="form-horizontal form-label-left">
                                     <label for="fullname">使用者名稱 :</label>
                                     <input type="text" id="fullname" class="form-control" name="username" placeholder="{{ manager.username }}" required readonly="readonly"/>
                                     <div class="form-group">
@@ -71,7 +71,42 @@
                                     <select id="heard" class="form-control" required name="role" disabled>
                                         <option value="{{ manager.role }}">{{ manager.role }}</option>
                                     </select>
-
+                                    <br>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">建立時間</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                            <input type="text" name="createdAt" class="form-control" readonly="readonly" style="padding-left:50px" value="{{ manager.createdAt }}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">更新時間</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                            <input type="text" name="updatedAt" class="form-control" readonly="readonly" style="padding-left:50px" value="{{ manager.updatedAt }}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">刪除時間</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                            <input type="text" name="deletedAt" class="form-control" readonly="readonly" style="padding-left:50px" value="{{ manager.deletedAt }}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">建立者</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                                            <input type="text" name="createdBy" class="form-control" readonly="readonly" style="padding-left:50px" value="{{ manager.CreatedBy.username }}">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-md-1 col-sm-1 col-xs-12">最後更新者</label>
+                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                            <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+                                            <input type="text" name="updatedBy" class="form-control" readonly="readonly" style="padding-left:50px" value="{{ manager.UpdatedBy.username }}">
+                                        </div>
+                                    </div>
                                     <div class="ln_solid"></div>
                                     <div class="form-group">
                                         <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-5">
@@ -79,6 +114,7 @@
                                         </div>
                                     </div>
                                 </form>
+
                                 <!-- end form for validations -->
                             </div>
                         </div>
