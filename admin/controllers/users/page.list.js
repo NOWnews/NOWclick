@@ -1,5 +1,5 @@
 import Debug from 'debug';
-const debug = Debug('NOWott-admin:controllers:users:page.list');
+const debug = Debug('NOWclick-admin:controllers:users:page.list');
 
 import moment from 'moment-timezone';
 

@@ -1,5 +1,5 @@
 import Debug from 'debug';
-const debug = Debug('NOWott-admin:controllers:announces:page.one');
+const debug = Debug('NOWclick-admin:controllers:announces:page.one');
 
 import moment from 'moment';
 

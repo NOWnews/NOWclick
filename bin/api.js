@@ -13,7 +13,7 @@ const server = http.createServer(api);
 
 server.listen(port);
 console.log(`-------------------------------`);
-console.log(`Start NOWott api`);
+console.log(`Start NOWclick api`);
 console.log(`Listen Port ${port}`);
 console.log(`${env} mode`);
 console.log(`-------------------------------`);

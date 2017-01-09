@@ -1,5 +1,5 @@
 import Debug from 'debug';
-const debug = Debug('NOWott-admin:controllers:devices:action.update');
+const debug = Debug('NOWclick-admin:controllers:devices:action.update');
 
 module.exports = async (req, res, next) => {
     let { id } = req.params;

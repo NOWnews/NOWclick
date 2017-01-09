@@ -14,7 +14,7 @@ admin.set('port', port);
 const server = http.createServer(admin);
 server.listen(port);
 console.log(chalk.blue(`-------------------------------`));
-console.log(chalk.blue(`Start NOWott admin`));
+console.log(chalk.blue(`Start NOWclick admin`));
 console.log(chalk.blue(`Listen Port ${port}`));
 console.log(chalk.blue(`${env} mode`));
 console.log(chalk.blue(`-------------------------------`));

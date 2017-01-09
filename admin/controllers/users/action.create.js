@@ -3,7 +3,7 @@
  */
 
 import Debug from 'debug';
-const debug = Debug('NOWott-admin:controllers:users:action.create');
+const debug = Debug('NOWclick-admin:controllers:users:action.create');
 
 import { getHashedPassword } from '../../../libs';
 

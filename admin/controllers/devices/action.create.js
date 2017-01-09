@@ -1,5 +1,5 @@
 import Debug from 'debug';
-const debug = Debug('NOWott-admin:controllers:devices:action.create');
+const debug = Debug('NOWclick-admin:controllers:devices:action.create');
 
 module.exports = async (req, res, next) => {
 
@@ -14,7 +14,7 @@ module.exports = async (req, res, next) => {
             osVersion,
             token,
             type,
-            UserId, 
+            UserId,
             createdBy: req.session.Manager.id,
             updatedBy: req.session.Manager.id,
             ManagerId: req.session.Manager.id

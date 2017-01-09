@@ -32,7 +32,7 @@ module.exports = (app) => {
     app.set('trust proxy', 1);
     app.use(cookieSession({
         name: 'ott',
-        keys: ['NOWott', 'ott']
+        keys: ['NOWclick', 'ott']
     }));
 
     app.use(logger('dev'));

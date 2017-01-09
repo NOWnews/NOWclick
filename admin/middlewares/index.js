@@ -38,8 +38,8 @@ module.exports = (app) => {
     // express session setting
     app.set('trust proxy', 1);
     app.use(cookieSession({
-        name: 'ott',
-        keys: ['NOWott', 'ott']
+        name: 'click',
+        keys: ['NOWclick', 'click']
     }));
 
     // view engine 設定與 views 擺放位置設定

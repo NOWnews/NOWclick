@@ -1,23 +1,23 @@
 {
-  "name": "nowott",
+  "name": "NOWclick",
   "version": "1.0.0",
-  "description": "NOWnews OTT",
+  "description": "NOWclick admin & api",
   "main": "index.js",
   "scripts": {
-    "admin": "npm install && DEBUG=NOWott-admin* NODE_ENV=dev ./node_modules/nodemon/bin/nodemon.js ./bin/admin.js",
-    "api": "npm install && DEBUG=NOWott-api* NODE_ENV=dev ./node_modules/nodemon/bin/nodemon.js ./bin/api.js",
+    "admin": "npm install && DEBUG=NOWclick-admin* NODE_ENV=dev ./node_modules/nodemon/bin/nodemon.js ./bin/admin.js",
+    "api": "npm install && DEBUG=NOWclick-api* NODE_ENV=dev ./node_modules/nodemon/bin/nodemon.js ./bin/api.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com:NOWnews/NOWott.git"
+    "url": "git+ssh://git@github.com:NOWnews/NOWclick.git"
   },
   "author": "Simon Sun",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/NOWnews/NOWott/issues"
+    "url": "https://github.com/NOWnews/NOWclick/issues"
   },
-  "homepage": "https://github.com/NOWnews/NOWott#README",
+  "homepage": "https://github.com/NOWnews/NOWclick#README",
   "dependencies": {
     "babel-core": "^6.18.2",
     "babel-polyfill": "^6.16.0",

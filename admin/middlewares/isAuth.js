@@ -1,5 +1,5 @@
 import Debug from 'debug';
-const debug = Debug('NOWott-admin:middlewares:isAuth');
+const debug = Debug('NOWclick-admin:middlewares:isAuth');
 
 module.exports = (req, res, next) => {
 
@@ -8,7 +8,7 @@ module.exports = (req, res, next) => {
     }
     debug('Session Manager = %j', req.session.Manager);
 
-    res.locals.ottManager = req.session.Manager;
+    res.locals.NOWclickManager = req.session.Manager;
 
     return next();
 };

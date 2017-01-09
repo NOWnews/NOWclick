@@ -11,7 +11,7 @@ module.exports = {
         db: {
             username: 'root',
             password: 'root',
-            database: 'NOWott',
+            database: 'NOWclick',
             options: {
                 host: '127.0.0.1',
                 port: 3306,
@@ -42,7 +42,7 @@ module.exports = {
         db: {
             username: 'root',
             password: '5j18ru,4',
-            database: 'NOWott',
+            database: 'NOWclick',
             options: {
                 host: '127.0.0.1',
                 port: 3306,
@@ -73,7 +73,7 @@ module.exports = {
         db: {
             username: 'root',
             password: '5j18ru,4',
-            database: 'NOWott',
+            database: 'NOWclick',
             options: {
                 host: '127.0.0.1',
                 port: 3306,

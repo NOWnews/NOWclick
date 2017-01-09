@@ -1,5 +1,5 @@
 import Debug from 'debug';
-const debug = Debug('NOWott-admin:controllers:managers:action.create');
+const debug = Debug('NOWclick-admin:controllers:managers:action.create');
 
 import { getHashedPassword } from '../../../libs';
 
